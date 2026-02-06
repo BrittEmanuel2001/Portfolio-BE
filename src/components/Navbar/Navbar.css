@@ -23,6 +23,7 @@
     justify-content: space-between;
 
     box-sizing: border-box;
+    z-index: 9999;
 }
 
 .navbar-desktop .nav-top {
@@ -44,7 +45,7 @@
 }
 
 .navbar-desktop .nav-top li {
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .navbar-desktop a, .mobile-menu a {
@@ -96,6 +97,7 @@
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 9999;
     }
 
     .nav-top-mobile {
@@ -118,6 +120,14 @@
 
     .nav-top-mobile img {
         height: 40%;
+    }
+
+    button.hamburger {
+        padding: 0;
+    }
+
+    button.hamburger:hover {
+        transform: none;
     }
 
     .hamburger {
