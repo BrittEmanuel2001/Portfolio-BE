@@ -28,3 +28,23 @@ body {
     background-color: var(--black);
     color: white;
 }
+
+.main-content {
+    margin-left: 120px;
+    width: calc(100% - 120px);
+}
+
+
+
+
+
+/* MOBILE */
+/* ====== */
+
+@media (max-width: 1024px) {
+    .main-content {
+        margin-top: 60px;
+        margin-left: 0;
+        width: 100%;
+    }
+}

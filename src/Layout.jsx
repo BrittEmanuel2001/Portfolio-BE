@@ -5,7 +5,7 @@ const Layout = () => {
   return (
     <div style={{ display: 'flex' }}>
       <Navbar />
-      <div style={{ marginLeft: '120px', width: 'calc(100% - 120px)' }}>
+      <div className='main-content'>
         <Outlet />
         {/* <Footer /> */}
         <ScrollRestoration />
