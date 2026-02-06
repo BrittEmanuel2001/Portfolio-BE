@@ -6,7 +6,7 @@ const sections = ["Home", "About", "Profiel", "Werk", "Contact"];
 const Navbar = () => {
 
     const [active, setActive] = useState("Home");
-    const [indicatorStyle, setIndicatorStyle] = useState({ top: 0, height: 0 });
+    const [indicatorStyle, setIndicatorStyle] = useState(null);
     const navRef = useRef(null);
 
     useEffect(() => {
@@ -38,10 +38,11 @@ const Navbar = () => {
             const { offsetTop, offsetHeight } = activeLink;
             setIndicatorStyle({ top: offsetTop - 10, height: offsetHeight + 20});
         }
-    }, [active]);
+    }, [active, navRef]);
 
     return (
         <div className='navbar' ref={navRef}>
+            <img src="BE-logo.svg"></img>
             <ul>
                 {sections.map(sectie => (
                     <li key={sectie}>
@@ -49,10 +50,12 @@ const Navbar = () => {
                     </li>
                 ))}
 
-                <div 
-                    className="indicator" 
-                    style={{ top: indicatorStyle.top, height: indicatorStyle.height }} 
-                />
+                {indicatorStyle && (
+                    <div
+                        className="indicator"
+                        style={{ top: indicatorStyle.top, height: indicatorStyle.height }}
+                    />
+                )}
             </ul>
         </div>
     )
