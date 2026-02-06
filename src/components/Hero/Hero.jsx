@@ -16,7 +16,9 @@ const Hero = () => {
                     <a href="#"><i className="fa-solid fa-square-phone"></i></a>
                 </div>
             </div>
-            
+            <div className="hero-image-col">
+                <div className="gradient"></div>
+            </div>
         </div>
     )
 }

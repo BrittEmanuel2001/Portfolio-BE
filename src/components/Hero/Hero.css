@@ -1,17 +1,19 @@
 .hero-section {
-    padding: 100px 100px 60px;
     height: 100vh;
     max-height: 750px;
     box-sizing: border-box;
+    display: flex;
 }
 
 .hero-section .hero-content-col {
-    padding-top: 10%;
+    padding: calc(100px + 10%) 0 60px 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
     height: 100%;
+    width: 50%;
+    min-width: 580px;
 }
 
 .text h1 {
@@ -45,4 +47,22 @@
 
 .socials a:hover {
     color: var(--primary);
+}
+
+.hero-section .hero-image-col {
+    width: 50%;
+    height: 100%;
+}
+
+.hero-section .hero-image-col .gradient {
+    background: linear-gradient(
+        to right, 
+        var(--primary-light), 
+        var(--primary), 
+        var(--primary-medium), 
+        var(--primary-dark), 
+        var(--black)
+    );
+    width: 80%;
+    height: 100%;
 }
