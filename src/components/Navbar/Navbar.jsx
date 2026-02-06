@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Download } from "lucide-react";
 import './Navbar.css';
 
 const sections = ["Home", "About", "Profiel", "Werk", "Contact"];
@@ -42,21 +43,34 @@ const Navbar = () => {
 
     return (
         <div className='navbar' ref={navRef}>
-            <img src="BE-logo.svg"></img>
-            <ul>
-                {sections.map(sectie => (
-                    <li key={sectie}>
-                        <a href={`#${sectie}`} className={active === sectie ? "active" : ""}>{sectie}</a>
-                    </li>
-                ))}
+            <div className="nav-top">
+                {/* Logo */}
+                <img src="BE-logo.svg"></img>
 
-                {indicatorStyle && (
-                    <div
-                        className="indicator"
-                        style={{ top: indicatorStyle.top, height: indicatorStyle.height }}
-                    />
-                )}
-            </ul>
+                {/* Links */}
+                <ul>
+                    {sections.map(sectie => (
+                        <li key={sectie}>
+                            <a href={`#${sectie}`} className={active === sectie ? "active" : ""}>{sectie}</a>
+                        </li>
+                    ))}
+
+                    {indicatorStyle && (
+                        <div
+                            className="indicator"
+                            style={{ top: indicatorStyle.top, height: indicatorStyle.height }}
+                        />
+                    )}
+                </ul>
+            </div>
+
+            {/* CV link */}
+            <div className="cv">
+                <a href="files/cv_BrittEmanuel_2025.pdf" download>
+                    <Download />
+                    <p>CV</p>
+                </a>
+            </div>
         </div>
     )
 }

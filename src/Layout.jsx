@@ -3,11 +3,13 @@ import Navbar from './components/Navbar/Navbar.jsx';
 
 const Layout = () => {
   return (
-    <div>
+    <div style={{ display: 'flex' }}>
       <Navbar />
-      <Outlet />
-      {/* <Footer /> */}
-      <ScrollRestoration />
+      <div style={{ marginLeft: '120px', width: 'calc(100% - 120px)' }}>
+        <Outlet />
+        {/* <Footer /> */}
+        <ScrollRestoration />
+      </div>
     </div>
   );
 }

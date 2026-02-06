@@ -8,8 +8,17 @@
     height: 100%;
     width: 120px;
     
-    padding-top: 40px;
+    padding: 40px 0;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+.navbar .nav-top {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +28,7 @@
 /* ==== */
 
 .navbar img {
-    width: 50%;
+    width: 80%;
     margin-bottom: 50px;
 }
 
@@ -38,7 +47,7 @@
 }
 
 .navbar a {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: white;
     text-decoration: none;
 }
@@ -54,8 +63,19 @@
 
 .navbar .indicator {
     position: absolute;
-    right: -29px;
+    right: -33px;
     width: 2px;
     background-color: var(--primary);
     transition: top 0.3s ease, height 0.3s ease;
+}
+
+/* CV link */
+/* ======= */
+
+.navbar .cv a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
 }
