@@ -1,10 +1,10 @@
+import Hero from "../components/Hero/Hero";
+
 const Home = () => {
     return (
         <div>
-            <div id="home">
-                <h1>Home</h1>
-            </div>
-            <p>Hello World</p>
+            <Hero />
+            <div style={{ backgroundColor: 'red' }}>Hello world C:</div>
         </div>
     )
 }

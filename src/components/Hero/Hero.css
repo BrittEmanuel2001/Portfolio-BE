@@ -1,0 +1,48 @@
+.hero-section {
+    padding: 100px 100px 60px;
+    height: 100vh;
+    max-height: 750px;
+    box-sizing: border-box;
+}
+
+.hero-section .hero-content-col {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.text h1 {
+    margin-bottom: 25px;
+}
+
+.text p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.5rem;
+}
+
+.text p span {
+    color: var(--primary);
+}
+
+.text button {
+    margin: 40px 0;
+}
+
+.socials {
+    display: flex;
+    gap: 5px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    transition: color 0.25s ease;
+}
+
+.socials a:hover {
+    color: var(--primary);
+}
