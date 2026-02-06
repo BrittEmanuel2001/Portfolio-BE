@@ -3,10 +3,12 @@
     max-height: 750px;
     box-sizing: border-box;
     display: flex;
+    position: relative;
+    justify-content: center;
 }
 
 .hero-section .hero-content-col {
-    padding: calc(100px + 10%) 0 60px 100px;
+    padding: 180px 0 60px 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -52,6 +54,7 @@
 .hero-section .hero-image-col {
     width: 50%;
     height: 100%;
+    position: relative;
 }
 
 .hero-section .hero-image-col .gradient {
@@ -63,6 +66,60 @@
         var(--primary-dark), 
         var(--black)
     );
-    width: 80%;
+    width: 50%;
     height: 100%;
+}
+
+.hero-section .hero-image-col .BE-letters {
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.hero-section .hero-image-col .BE-letters img {
+    object-fit: cover;
+    object-position: left -20px;
+    height: 120%;
+    width: 100%;
+}
+
+.hero-section .me-groot {
+    position: absolute;
+    min-width: 800px;
+    width: 60%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+}
+
+.hero-section .me-groot img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: -30px 30%;
+}
+
+@media (min-width: 1720px) {
+
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+
+    .hero-section .hero-content-col {
+        padding: 180px 0 60px 160px;
+    }
+
+    .hero-section .me-groot {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .hero-section .me-groot img {
+        object-position: 100% 30%;
+    }
 }

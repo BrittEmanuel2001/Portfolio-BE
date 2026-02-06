@@ -18,6 +18,12 @@ const Hero = () => {
             </div>
             <div className="hero-image-col">
                 <div className="gradient"></div>
+                <div className='BE-letters'>
+                    <img src='./BE-letters.svg'></img>
+                </div>
+            </div>
+            <div className='me-groot'>
+                <img src='./Portfolio_Britt_v2.png'></img>
             </div>
         </div>
     )
