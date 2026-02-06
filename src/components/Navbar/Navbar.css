@@ -1,0 +1,49 @@
+.navbar {
+    background-color: var(--darker-grey);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 120px;
+    
+    padding-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navbar li {
+    padding: 30px 0;
+}
+
+.navbar a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+.navbar a.active {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.navbar .indicator {
+    position: absolute;
+    right: -29px;
+    width: 2px;
+    background-color: var(--primary);
+    transition: top 0.3s ease, height 0.3s ease;
+}
