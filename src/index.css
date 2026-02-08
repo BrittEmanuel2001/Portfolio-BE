@@ -55,6 +55,7 @@ button {
 .button-primary {
   color: white;
   background-color: var(--darker-grey);
+  border-left: 2px solid var(--primary);
   padding: 15px 20px;
   font-weight: 600;
   font-size: 0.9rem;

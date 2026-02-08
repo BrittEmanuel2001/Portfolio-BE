@@ -30,15 +30,23 @@ const Hero = () => {
                         
                         <motion.button
                             className="button-primary"
+                            animate={{
+                                y: [0, -5, 0],
+                            }}
+                            transition={{
+                                duration: 1.6,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
                             onClick={() => {
                                 const el = document.getElementById("about");
                                 if (el) el.scrollIntoView({ behavior: "smooth" });
                             }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileTap={{ scale: 0.92 }}
                         >
-                            <i className="fa-solid fa-terminal"></i> whoami
+                            <i className="fa-solid fa-terminal"></i> &nbsp; whoami
                         </motion.button>
+
                     </div>
                 </div>
                 <div className="socials">
