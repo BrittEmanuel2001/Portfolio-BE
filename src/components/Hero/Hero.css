@@ -132,7 +132,7 @@
     width: auto;
     max-height: 750px;
     object-position: 100% 25%;
-    transform: translateX(28%) translateY(2%) scale(1.1);
+    transform: translateX(28%) translateY(6%) scale(1.2);
 }
 
 .hero {
