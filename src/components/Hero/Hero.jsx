@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import AnimatedH1 from "./AnimatedH1";
 import './Hero.css';
 
 const socials = [
-    { href: "#", icon: "fa-brands fa-linkedin" },
-    { href: "#", icon: "fa-brands fa-github" },
-    { href: "#", icon: "fa-solid fa-square-phone" },
+    { href: "https://www.linkedin.com/in/britt-emanuel", icon: "fa-brands fa-linkedin" },
+    { href: "https://github.com/BrittEmanuel2001", icon: "fa-brands fa-github" },
+    { href: "tel:+32484070169", icon: "fa-solid fa-square-phone" },
 ];
 
 const Hero = () => {
@@ -20,8 +20,14 @@ const Hero = () => {
                 <div className='hero-content'>
                     <div className="text">
                         <AnimatedH1 />
+                        <p style={{fontSize: "1.2rem", paddingBottom: "20px", fontFamily: "montserrat"}}>Krachtig, authentiek en helemaal jij.</p>
+                        <p><span style={{color: "var(--dark-grey)", fontSize: "1.2rem"}}>By Britt Emanuel</span></p>
+                        {/* <p style={{fontSize: "1.2rem"}}><span>_</span> Graphic design</p>
+                        <p style={{fontSize: "1.2rem"}}><span>_</span> Development</p> */}
+                        {/* <p><span style={{color: "var(--grey)", fontSize: "1.2rem"}}>Krachtig, authentiek en helemaal jij.</span></p> <br />
                         <p><span>_</span> Graphic design</p>
-                        <p><span>_</span> Development</p>
+                        <p><span>_</span> Development</p> */}
+                        
                         <motion.button
                             className="button-primary"
                             onClick={() => {
@@ -40,6 +46,7 @@ const Hero = () => {
                         <motion.a
                             key={index}
                             href={social.href}
+                            target="blank"
                             whileHover={{ rotate: 15, scale: 1.2 }}
                             transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             whileTap={{ scale: 0.95 }}
