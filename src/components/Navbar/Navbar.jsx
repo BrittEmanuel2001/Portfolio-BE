@@ -4,7 +4,7 @@ import './Navbar.css';
 
 const sections = ["Home", "About", "Profiel", "Werk", "Contact"];
 
-const Navbar = () => {
+const Navbar = ({ isLoaded }) => {
 
     const [active, setActive] = useState("Home");
     const [indicatorStyle, setIndicatorStyle] = useState(null);

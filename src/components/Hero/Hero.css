@@ -9,12 +9,12 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 45%;
+    width: 50%;
     height: 100%;
     background: linear-gradient(
         to right, 
         var(--primary-light), 
-        var(--primary) 10%, 
+        var(--primary) 5%, 
         var(--primary-medium), 
         var(--primary-dark), 
         var(--black) 40%
@@ -28,7 +28,7 @@
         background-size: 100% 100%;
     }
     50% {
-        background-size: 150% 100%; /* subtiel breder */
+        background-size: 140% 100%;
     }
 }
 
@@ -62,7 +62,8 @@
 
 .hero-content {
     width: 50%;
-    padding-left: 120px;
+    padding-left: 14%;
+    z-index: 1000;
 }
 
 .text h1 {
@@ -123,7 +124,22 @@
     width: auto;
     max-height: 750px;
     object-position: 100% 25%;
-    transform: translateX(25%) scale(1.1);
+    transform: translateX(17%) translateY(5%) scale(1.15);
+}
+
+.hero {
+  font-weight: 800;
+  font-size: 5.8rem;
+  line-height: 1.1;
+}
+
+.line {
+  display: block;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 
@@ -149,7 +165,7 @@
     }
 
     .hero-content {
-        padding: 0 60px;
+        padding: 0 55px;
         width: 100%;
     }
 
@@ -158,19 +174,22 @@
     }
 
     .hero-content .text h1 {
-        margin-top: 50px;
-        margin-bottom: 40px;
-        font-size: 3.3rem;
+        margin-top: 0;
+        margin-bottom: 45px;
+        font-size: 3.8rem;
+    }
+
+    .hero-content .socials {
+        margin-top: 120px;
     }
 
     .hero-content .text button {
-        margin-top: 60px;
-        margin-bottom: 80px;
+        display: none;
     }
 
     .hero-section {
-        height: calc(95vh - 60px);
-        min-height: 88vh;
+        height: calc(85vh - 60px);
+        min-height: 80vh;
     }
 
     .hero-section .gradient, .hero-section .hero-container-image .me-groot {
@@ -183,5 +202,11 @@
 
     .hero-section .BE-letters img {
         height: 110%;
+    }
+
+    .hero {
+        font-weight: 800;
+        font-size: 5.3rem !important;
+        line-height: 1.1;
     }
 }

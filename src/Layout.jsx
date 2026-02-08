@@ -9,9 +9,9 @@ const Layout = () => {
   return (
     <div style={{ display: 'flex' }}>
       {!loaded && <IntroLoader onComplete={() => setLoaded(true)} />}
-      <Navbar />
+      <Navbar isLoaded={loaded} />
       <div className='main-content'>
-        <Outlet />
+        {loaded && <Outlet />}
         {/* <Footer /> */}
         <ScrollRestoration />
       </div>

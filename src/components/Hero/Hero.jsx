@@ -1,6 +1,9 @@
+import { motion } from "framer-motion";
+import AnimatedH1 from "./AnimatedH1";
 import './Hero.css';
 
 const Hero = () => {
+
     return (
         <div id="home" className="hero-section">
             <div className="gradient"></div>
@@ -10,10 +13,16 @@ const Hero = () => {
             <div className='hero-container'>
                 <div className='hero-content'>
                     <div className="text">
-                        <h1>Be bold, Be real <br></br> Be you.</h1>
+                        <AnimatedH1 />
                         <p><span>&gt;</span> Graphic design</p>
                         <p><span>&gt;</span> Development</p>
-                        <button>Get to know me</button>
+                        <motion.button
+                            whileHover={{ scale: 1.1, boxShadow: "0px 8px 20px rgba(0,0,0,0.3)" }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        >
+                            Get to know me
+                        </motion.button>
                         </div>
                         
                     <div className="socials">
@@ -23,11 +32,11 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className='hero-container-image'>
+            {/* <div className='hero-container-image'>
                 <div className='me-groot'>
                     <img src='./Portfolio_Britt_v2.png'></img>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
