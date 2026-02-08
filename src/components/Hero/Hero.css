@@ -1,5 +1,5 @@
 .hero-section {
-    min-height: 90vh;
+    min-height: 85vh;
     max-height: 750px;
     box-sizing: border-box;
     position: relative;
@@ -34,11 +34,12 @@
 
 
 .hero-section .BE-letters {
+    opacity: 0.8;
     position: absolute;
-    width: 30%;
+    width: 50%;
     height: 100%;
     top: 0;
-    right: 14%;
+    right: 0;
     overflow: hidden;
 }
 
@@ -48,17 +49,6 @@
     height: 100%;
     width: 100%;
     transform: translateX(200px);
-}
-
-.hero-section .BE-letters::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    background: linear-gradient(to right, rgba(26,26,26,0) 0%, var(--black) 100%);
-    pointer-events: none;
 }
 
 .hero-container {
@@ -75,7 +65,7 @@
 
 .hero-content {
     width: 50%;
-    padding-left: 14%;
+    padding-left: 10%;
     z-index: 1000;
 }
 
@@ -103,7 +93,7 @@
     margin-bottom: 30px;
     position: absolute;
     bottom: 40px;
-    left: 14%;
+    left: 10%;
     z-index: 10000;
 }
 
@@ -147,7 +137,7 @@
 
 .hero {
   font-weight: 800;
-  font-size: 5.8rem;
+  font-size: 6rem;
   line-height: 1.1;
 }
 
@@ -165,6 +155,17 @@
 /* ====== */
 
 @media (max-width: 1400px) {
+    .hero-section .BE-letters::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(26,26,26,0) 0%, var(--black) 100%);
+        pointer-events: none;
+    }
+
     .hero-content {
         width: 35%;
         max-height: unset;
@@ -227,7 +228,6 @@
     }
 
     .BE-letters {
-        opacity: 0.2;
         left: 0;
     }
 
@@ -237,6 +237,7 @@
         height: 100%;
         width: 100%;
         transform: translateX(45%);
+        opacity: 0.2;
     }
 
     .hero-section .BE-letters {

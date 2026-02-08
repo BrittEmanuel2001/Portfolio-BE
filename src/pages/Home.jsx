@@ -33,7 +33,7 @@ const Home = () => {
                 </motion.div>
             </motion.div>
 
-            <div style={{backgroundColor:"#1a1a1a", opacity:"0.5", height:"500px"}}>
+            <div style={{backgroundColor:"var(--black)", opacity:"0.5", height:"500px"}}>
 
             </div>
 
