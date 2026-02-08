@@ -30,13 +30,13 @@ body {
 }
 
 .main-content {
-    margin-left: 120px;
-    width: calc(100% - 120px);
+    margin-left: 150px;
+    width: calc(100% - 150px);
 }
 
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
 
 p {

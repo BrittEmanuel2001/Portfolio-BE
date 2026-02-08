@@ -39,10 +39,14 @@
   z-index: 20001;
 }
 
-.panel {
+.transition .panel {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   transform: translateX(-100%);
+  z-index: 9999;
 }
 
 .panel.white {
@@ -50,15 +54,10 @@
   background: var(--darker-grey);
 }
 
-.panel.purple {
-  /*background: var(--darker-grey);*/
-  background: var(--black);
-}
-
 .loader-line-container {
   width: 6px;
   height: 100%;
-  background: var(--darker-grey);
+  background: var(--black);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
@@ -75,22 +74,63 @@
   transition: transform 0.12s ease-out;
 }
 
-/*
-.loader-line-container {
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background: var(--darker-grey);
-    border-radius: 3px;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
+.loader-percentage {
+  position: fixed;
+  bottom: 30px;
+  right: 60px;
+  font-family: 'Montserrat', monospace;
+  font-size: 8rem;
+  color: var(--dark-grey);
+  pointer-events: none;
+  z-index: 20002;
+  user-select: none;
 }
 
-.loader-line {
-  width: 100%;
-  background: var(--primary);
-  height: 0%;
-  transition: height 0.12s ease-out;
-  border-radius: 3px;
-}*/
+@media (max-width: 1024px) {
+  .loader-percentage {
+    display: none;
+  }
+
+  .be-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    animation: blink-le 1.4s infinite both;
+    transform: translateX(-60px) scale(1.15);
+  }
+
+  @keyframes blink-le {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.1; }
+    100% { opacity: 0.2; }
+  }
+
+  .loader-line-container {
+    width: 100%;
+    height: 6px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: var(--black);
+    border-radius: 0;
+  }
+
+  .loader-line {
+    height: 100%;           /* dikte van de lijn = container hoogte */
+    width: 100%;               /* startbreedte = 0 */
+    background: var(--primary);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.12s ease-out;
+  }
+}
+
