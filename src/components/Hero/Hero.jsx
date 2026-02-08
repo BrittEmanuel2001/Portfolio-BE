@@ -29,10 +29,6 @@ const Hero = () => {
                 </div>
             </div>
         </div>
-        //     <div className='me-groot'>
-        //         <img src='./Portfolio_Britt_v2.png'></img>
-        //     </div>
-        // </div>
     )
 }
 
