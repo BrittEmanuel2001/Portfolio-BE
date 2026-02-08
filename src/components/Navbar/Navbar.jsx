@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Download, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import './Navbar.css';
 
 const sections = ["Home", "About", "Profiel", "Werk", "Contact"];
@@ -12,6 +13,13 @@ const Navbar = ({ isLoaded }) => {
     const navRef = useRef(null);
 
     const toggleMenu = () => setMobileOpen(prev => !prev);
+
+    const menuVariants = {
+    hidden: { y: "-100%"},
+visible: { y: "0%", transition: { duration: 0.5, ease: "easeOut" } },
+exit: { y: "-100%", transition: { duration: 0.4, ease: "easeIn" } },
+    };
+
 
     // DESKTOP OBSERVER
     // ================
@@ -79,32 +87,42 @@ const Navbar = ({ isLoaded }) => {
 
             {/* Mobile: nav */}
             <div className="navbar-mobile">
-                <div className="nav-top-mobile">
-                    <img src="BE-logo.svg" alt="Logo" />
-                    <button className="hamburger" onClick={toggleMenu}>
-                        {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
-                </div>
+      <div className="nav-top-mobile">
+        <img src="BE-logo.svg" alt="Logo" />
+        <button className="hamburger" onClick={toggleMenu}>
+          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
 
-                <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
-                    <ul>
-                        {sections.map(sectie => (
-                        <li key={sectie}>
-                            <a href={`#${sectie}`} onClick={() => setMobileOpen(false)}>
-                            {sectie}
-                            </a>
-                        </li>
-                        ))}
-                    </ul>
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            className="mobile-menu"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+          >
+            <ul>
+              {sections.map((sectie) => (
+                <li key={sectie}>
+                  <a href={`#${sectie}`} onClick={() => setMobileOpen(false)}>
+                    {sectie}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-                    <div className="cv">
-                        <a href="files/cv_BrittEmanuel_2025.pdf" download>
-                        <Download size={32} />
-                        <p>CV</p>
-                        </a>
-                    </div>
-                </div>
+            <div className="cv">
+              <a href="files/cv_BrittEmanuel_2025.pdf" download>
+                <Download size={32} />
+                <p>CV</p>
+              </a>
             </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
         </>
     )
 }
