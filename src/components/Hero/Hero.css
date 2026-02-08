@@ -110,7 +110,7 @@
 
 .hero-section .hero-container-image .me-groot {
     position: absolute;
-    width: 67%;
+    width: 65%;
     height: 100%;
     bottom: 0;
     right: 0;
@@ -124,7 +124,7 @@
     width: auto;
     max-height: 750px;
     object-position: 100% 25%;
-    transform: translateX(17%) translateY(5%) scale(1.15);
+    transform: translateX(17%) translateY(2%) scale(1.1);
 }
 
 .hero {
