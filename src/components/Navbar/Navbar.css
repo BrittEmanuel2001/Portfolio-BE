@@ -6,7 +6,8 @@
 }
 
 .navbar-desktop {
-    background-color: var(--darker-grey);
+    background-color: var(--black);
+    border-right: 1px solid white;
 
     position: fixed;
     top: 0;
@@ -42,6 +43,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    text-transform: capitalize;
 }
 
 .navbar-desktop .nav-top li {
@@ -66,10 +68,13 @@
 
 .navbar-desktop .nav-top .indicator {
     position: absolute;
-    right: -44px;
-    width: 2px;
+    right: -45px;
+    width: 4px;
     background-color: var(--primary);
-    transition: top 0.3s ease, height 0.3s ease;
+    border-top: 20px solid var(--black);
+    border-bottom: 20px solid var(--black);
+    border-radius: none;
+    transition: top 0.5s ease-out, height 0.5s ease-out;
 }
 
 .navbar-desktop .cv a {
@@ -164,6 +169,7 @@
         align-items: center;
         gap: 50px;
         margin-bottom: 80px;
+        text-transform: capitalize;
     }
 
     .mobile-menu a {

@@ -3,9 +3,9 @@ import { Download, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import './Navbar.css';
 
-const sections = ["Home", "About", "Profiel", "Werk", "Contact"];
+const sections = ["home", "about", "profiel", "werk", "contact"];
 
-const Navbar = ({ isLoaded }) => {
+const Navbar = () => {
 
     const [active, setActive] = useState("Home");
     const [indicatorStyle, setIndicatorStyle] = useState(null);
@@ -15,9 +15,9 @@ const Navbar = ({ isLoaded }) => {
     const toggleMenu = () => setMobileOpen(prev => !prev);
 
     const menuVariants = {
-    hidden: { y: "-100%"},
-visible: { y: "0%", transition: { duration: 0.5, ease: "easeOut" } },
-exit: { y: "-100%", transition: { duration: 0.4, ease: "easeIn" } },
+        hidden: { y: "-100%"},
+        visible: { y: "0%", transition: { duration: 0.5, ease: "easeOut" } },
+        exit: { y: "-100%", transition: { duration: 0.4, ease: "easeIn" } },
     };
 
 
@@ -27,33 +27,40 @@ exit: { y: "-100%", transition: { duration: 0.4, ease: "easeIn" } },
     useEffect(() => {
         const observer = new IntersectionObserver(
             entries => {
-                entries.forEach(e => {
-                    if(e.isIntersecting) {
-                        setActive(e.target.id)
-                    }
-                })
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                setActive(entry.target.id);
+                }
+            });
             },
             { threshold: 0.6 }
-        )
+        );
 
         sections.forEach(id => {
             const el = document.getElementById(id);
             if (el) observer.observe(el);
-        })
+        });
 
         return () => observer.disconnect();
-    }, []);
+    });
 
     useEffect(() => {
         const nav = navRef.current;
         if (!nav) return;
 
-        const activeLink = nav.querySelector(`a[href="#${active}"]`);
-        if (activeLink) {
-            const { offsetTop, offsetHeight } = activeLink;
-            setIndicatorStyle({ top: offsetTop - 10, height: offsetHeight + 20});
-        }
-    }, [active, navRef]);
+        const updateIndicator = () => {
+            const activeLink = nav.querySelector(`a[href="#${active.toLowerCase()}"]`);
+            if (activeLink) {
+                const { offsetTop, offsetHeight } = activeLink;
+                setIndicatorStyle({ top: offsetTop - 30, height: offsetHeight + 20 });
+            }
+        };
+
+        updateIndicator(); // zet de positie meteen
+
+        window.addEventListener("resize", updateIndicator);
+        return () => window.removeEventListener("resize", updateIndicator);
+    }, [active]);
 
     return (
         <>
@@ -87,42 +94,42 @@ exit: { y: "-100%", transition: { duration: 0.4, ease: "easeIn" } },
 
             {/* Mobile: nav */}
             <div className="navbar-mobile">
-      <div className="nav-top-mobile">
-        <img src="BE-logo.svg" alt="Logo" />
-        <button className="hamburger" onClick={toggleMenu}>
-          {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
+                <div className="nav-top-mobile">
+                    <img src="BE-logo.svg" alt="Logo" />
+                    <button className="hamburger" onClick={toggleMenu}>
+                    {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            className="mobile-menu"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={menuVariants}
-          >
-            <ul>
-              {sections.map((sectie) => (
-                <li key={sectie}>
-                  <a href={`#${sectie}`} onClick={() => setMobileOpen(false)}>
-                    {sectie}
-                  </a>
-                </li>
-              ))}
-            </ul>
+                <AnimatePresence>
+                    {mobileOpen && (
+                    <motion.div
+                        className="mobile-menu"
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={menuVariants}
+                    >
+                        <ul>
+                        {sections.map((sectie) => (
+                            <li key={sectie}>
+                            <a href={`#${sectie}`} onClick={() => setMobileOpen(false)}>
+                                {sectie}
+                            </a>
+                            </li>
+                        ))}
+                        </ul>
 
-            <div className="cv">
-              <a href="files/cv_BrittEmanuel_2025.pdf" download>
-                <Download size={32} />
-                <p>CV</p>
-              </a>
+                        <div className="cv">
+                        <a href="files/cv_BrittEmanuel_2025.pdf" download>
+                            <Download size={32} />
+                            <p>CV</p>
+                        </a>
+                        </div>
+                    </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
         </>
     )
 }

@@ -2,6 +2,12 @@ import { motion } from "framer-motion";
 import AnimatedH1 from "./AnimatedH1";
 import './Hero.css';
 
+const socials = [
+    { href: "#", icon: "fa-brands fa-linkedin" },
+    { href: "#", icon: "fa-brands fa-github" },
+    { href: "#", icon: "fa-solid fa-square-phone" },
+];
+
 const Hero = () => {
 
     return (
@@ -14,22 +20,33 @@ const Hero = () => {
                 <div className='hero-content'>
                     <div className="text">
                         <AnimatedH1 />
-                        <p><span>&gt;</span> Graphic design</p>
-                        <p><span>&gt;</span> Development</p>
+                        <p><span>_</span> Graphic design</p>
+                        <p><span>_</span> Development</p>
                         <motion.button
-                            whileHover={{ scale: 1.1, boxShadow: "0px 8px 20px rgba(0,0,0,0.3)" }}
+                            className="button-primary"
+                            onClick={() => {
+                                const el = document.getElementById("about");
+                                if (el) el.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
-                            Get to know me
+                            <i className="fa-solid fa-terminal"></i> whoami
                         </motion.button>
-                        </div>
-                        
-                    <div className="socials">
-                        <a href="#"><i className="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i className="fa-brands fa-github"></i></a>
-                        <a href="#"><i className="fa-solid fa-square-phone"></i></a>
                     </div>
+                </div>
+                <div className="socials">
+                    {socials.map((social, index) => (
+                        <motion.a
+                            key={index}
+                            href={social.href}
+                            whileHover={{ rotate: 15, scale: 1.2 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            <i className={social.icon}></i>
+                        </motion.a>
+                    ))}
                 </div>
             </div>
             <div className='hero-container-image'>
