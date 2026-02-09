@@ -1,0 +1,32 @@
+.skills-tabs {
+    display: flex;
+    gap: 30px;
+}
+
+.skills-tabs div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-tabs button {
+    background: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+}
+
+.skills-tabs button span i {
+    font-size: 19.20px;
+}
+
+.skills-tabs button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-grey);
+    padding: 10px;
+    aspect-ratio: 1/1;
+}

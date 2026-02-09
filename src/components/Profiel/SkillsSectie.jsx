@@ -1,10 +1,31 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { PenTool, Monitor, Server } from "lucide-react";
 
 const tabs = [
-  { id: 1, title: "Graphic design", content: "Design" },
-  { id: 2, title: "UI / UX design", content: "UI/UX" },
-  { id: 3, title: "Front-end development", content: "Frontend" },
-  { id: 4, title: "Back-end development", content: "Backend" },
+  { 
+    id: 1, 
+    title: "Graphic design", 
+    content: "Design", 
+    icon: <PenTool className="mirror" /> 
+  },
+  { 
+    id: 2, 
+    title: "UI / UX design", 
+    content: "UI/UX", 
+    icon: <Monitor /> 
+  },
+  { 
+    id: 3, 
+    title: "Front-end development", 
+    content: "Frontend", 
+    icon: <i className="fa-solid fa-code" /> 
+  },
+  { 
+    id: 4, 
+    title: "Back-end development", 
+    content: "Backend", 
+    icon: <Server /> 
+  },
 ];
 
 const SkillsSectie = ({ activeTab, setActiveTab }) => {
@@ -17,41 +38,42 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
   }, [setActiveTab]);
 
   return (
-    <div id="skills" style={{ display: "flex", gap: "2rem", padding: "2rem" }}>
-      {/* Links: tab buttons */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            style={{
-              padding: "1rem",
-              fontWeight: activeTab === tab.id ? "bold" : "normal",
-              background: activeTab === tab.id ? "#4c2cff" : "#333",
-              color: "#fff",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-            }}
-          >
-            {tab.title}
-          </button>
-        ))}
-      </div>
+    <div id="skills" className="skills-tabs">
+        <div>
+            {tabs.map((tab) => (
+                <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    style={{
+                        opacity: activeTab === tab.id ? "1" : "0.3",
+                        fontWeight: activeTab === tab.id ? "800" : "bold",
+                    }}
+                >
+                    <span
+                        style={{
+                            borderBottom: activeTab === tab.id ? "2px solid var(--primary)" : ""
+                        }}
+                    >
+                        {tab.icon}
+                    </span>
+                    {tab.title}
+                </button>
+            ))}
+        </div>
 
-      {/* Rechts: content */}
-      <div
-        style={{
-          flex: 1,
-          background: "#111",
-          color: "#fff",
-          padding: "2rem",
-          borderRadius: "12px",
-        }}
-      >
-        <h2>{tabs.find((tab) => tab.id === activeTab).title}</h2>
-        <p>{tabs.find((tab) => tab.id === activeTab).content}</p>
-      </div>
+        {/* Rechts: content */}
+        <div
+            style={{
+            flex: 1,
+            background: "#111",
+            color: "#fff",
+            padding: "2rem",
+            borderRadius: "12px",
+            }}
+        >
+            <h2>{tabs.find((tab) => tab.id === activeTab).title}</h2>
+            <p>{tabs.find((tab) => tab.id === activeTab).content}</p>
+        </div>
     </div>
   );
 };
