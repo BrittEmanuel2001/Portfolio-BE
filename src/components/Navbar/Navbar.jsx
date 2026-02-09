@@ -56,7 +56,7 @@ const Navbar = () => {
             }
         };
 
-        updateIndicator(); // zet de positie meteen
+        updateIndicator();
 
         window.addEventListener("resize", updateIndicator);
         return () => window.removeEventListener("resize", updateIndicator);

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Hero from "../components/Hero/Hero";
+import ServicesSection from "../components/Hero/ServicesSection";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -30,12 +31,9 @@ const Home = () => {
             >
                 <motion.div variants={contentVariants}>
                     <Hero />
+                    <ServicesSection />
                 </motion.div>
             </motion.div>
-
-            <div style={{backgroundColor:"var(--black)", opacity:"0.5", height:"500px"}}>
-
-            </div>
 
             <motion.div
               style={{
