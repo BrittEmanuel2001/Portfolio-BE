@@ -14,7 +14,7 @@ const Hero = () => {
         <div id="home" className="hero-section relative-container">
             <div className="gradient"></div>
             <div className='BE-letters'>
-                <img src='./BE-letters.svg'></img>
+                <img src='./background/BE-letters.svg'></img>
             </div>
             <div className='outside-container relative-container'>
                 <div className="inside-container relative-container">
@@ -61,7 +61,7 @@ const Hero = () => {
                 </div>
                 <div className='hero-container-image'>
                     <div className='me-groot'>
-                        <img src='./Portfolio_Britt_v4.png'></img>
+                        <img src='./background/Portfolio_Britt_v4.png'></img>
                     </div>
                 </div>
             </div>

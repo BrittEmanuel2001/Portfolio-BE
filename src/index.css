@@ -39,8 +39,22 @@ h1 {
     font-size: 4rem;
 }
 
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h3 {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
 p {
     font-size: 0.9rem;
+    line-height: 1.6rem;
 }
 
 button {
@@ -204,5 +218,15 @@ button {
 
     .flex-between {
         gap: 40px;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    p {
+        font-size: 0.9rem;
     }
 }
