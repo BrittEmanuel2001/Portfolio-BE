@@ -12,13 +12,3 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
-.about-section .outside-container {
-    padding: 140px 10% 110px;
-}
-
-@media (max-width: 765px) {
-    .about-section .outside-container {
-        padding: 140px 14% 110px;
-    }
-}

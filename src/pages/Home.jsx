@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Hero from "../components/Hero/Hero";
 import ServicesSection from "../components/Hero/ServicesSection";
 import About from "../components/About/About";
+import Profiel from "../components/Profiel/Profiel";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,6 +38,7 @@ const Home = () => {
             </motion.div>
 
             <About />
+            <Profiel />
         </>
     );
 };

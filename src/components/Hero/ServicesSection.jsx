@@ -39,7 +39,7 @@ const ServicesSection = () => {
                     className="flex-center skill-topic" 
                     variants={itemVariants}
                     onClick={() => {
-                        const target = document.getElementById("about");
+                        const target = document.getElementById("skills");
                         if (target) {
                             target.scrollIntoView({ behavior: "smooth" });
                         }
@@ -53,7 +53,7 @@ const ServicesSection = () => {
                     className="flex-center skill-topic" 
                     variants={itemVariants}
                     onClick={() => {
-                        const target = document.getElementById("about");
+                        const target = document.getElementById("skills");
                         if (target) {
                             target.scrollIntoView({ behavior: "smooth" });
                         }
@@ -67,7 +67,7 @@ const ServicesSection = () => {
                     className="flex-center skill-topic" 
                     variants={itemVariants}
                     onClick={() => {
-                        const target = document.getElementById("about");
+                        const target = document.getElementById("skills");
                         if (target) {
                             target.scrollIntoView({ behavior: "smooth" });
                         }
@@ -81,7 +81,7 @@ const ServicesSection = () => {
                     className="flex-center skill-topic" 
                     variants={itemVariants}
                     onClick={() => {
-                        const target = document.getElementById("about");
+                        const target = document.getElementById("skills");
                         if (target) {
                             target.scrollIntoView({ behavior: "smooth" });
                         }
