@@ -37,7 +37,6 @@ const tabs = [
     products: "Websites, UI components, apps...",
     icon: Code,
     tools: [
-        { icon: "cibGit", name: "Git", type: "tooling" },
         { icon: "cibHtml5", name: "HTML", type: "language" },
         { icon: "cibCss3Shiled", name: "CSS", type: "language" },
         { icon: "cibJavascript", name: "Javascript", type: "language" },
@@ -45,6 +44,7 @@ const tabs = [
         { icon: "cibReact", name: "React", type: "framework" },
         { icon: "cilLayers", name: "Blazor WebAssembly", type: "framework" },
         { icon: "cibCsswizardry", name: "Tailwind CSS", type: "framework" },
+        { icon: "cibGit", name: "Git", type: "tooling" },
     ],
     image: "Project_CampusApp.jpg"
   },
@@ -56,7 +56,6 @@ const tabs = [
     products: "REST API's, databases, servers...",
     icon: Server,
     tools: [
-        { icon: "cibGit", name: "Git", type: "tooling" },
         { icon: "cibJava", name: "Java", type: "language" },
         { icon: "cibC", name: "C#", type: "language" },
         { icon: "cibPython", name: "Python", type: "language" },
@@ -67,6 +66,7 @@ const tabs = [
         { icon: "cibMongodb", name: "MongoDB", type: "database" },
         { icon: "cibRedis", name: "Redis", type: "database" },
         { icon: "cibNeo4j", name: "Neo4j", type: "database" },
+        { icon: "cibGit", name: "Git", type: "tooling" },
     ],
     image: "Backend.jpg"
   },

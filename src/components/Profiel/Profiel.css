@@ -117,11 +117,6 @@
     fill: currentColor;
 }
 
-.tool-badge[data-type="language"] { 
-    background-color: var(--primary) !important; 
-    color: #4A2C8C !important;
-}
-
 .tool-badge[data-type="framework"] { 
     background-color: #c4afe4 !important; 
     color: #3f2870 !important;
@@ -133,15 +128,67 @@
 }
 
 .tool-badge[data-type="database"] { 
-    background-color: #3f2870 !important;
-    color: #c4afe4 !important;
+    background-color: #303531 !important;
+    color: #c6c6c6 !important;
+    /*background-color: #3f2870 !important;
+    color: #c4afe4 !important;*/
 }
 
-/* subtiele hover: licht oplichten */
 .tool-badge:hover {
     filter: brightness(1.1);
     cursor: pointer;
 }
+
+.profiel-container-relative {
+    position: relative;
+}
+
+.profiel-letters {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.1;
+    width: 40%;
+    transform: translateY(40px) translateX(-30px);
+}
+
+.experience-section {
+    margin-top: 120px;
+}
+
+.experience-tabs {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+.experience-tabs button {
+    color: white;
+    background-color: transparent;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.experience-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    position: relative;
+    z-index: 5;
+}
+
+.experience-cards .experience-card {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--darker-grey);
+    padding: 30px 40px 30px 30px;
+    border-left: 2px var(--primary) solid;
+}
+
+
 
 
 /* TABLET */
