@@ -1,12 +1,25 @@
 .skills-tabs {
     display: flex;
-    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
 }
 
-.skills-tabs div:first-of-type {
+.skills-tabs .skills-buttons {
+    width: 25%;
+}
+
+.skills-tabs .skills-content {
+    width: 75%;
+}
+
+.skills-tabs .skills-buttons {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 40px;
+    height: 100%;
 }
 
 .skills-tabs button {
@@ -14,6 +27,7 @@
     color: white;
     display: flex;
     align-items: center;
+    text-align: left;
     gap: 15px;
     padding: 0;
 }
@@ -27,6 +41,80 @@
     justify-content: center;
     align-items: center;
     background-color: var(--dark-grey);
-    padding: 10px;
+    padding: 15px;
     aspect-ratio: 1/1;
+}
+
+.skills-tabs .skills-content {
+    display: flex;
+    background-color: var(--darker-grey);
+}
+
+.skills-tabs .skills-content .content-text {
+    width: 55%;
+    padding: 40px;
+}
+
+.skills-tabs .skills-content .content-image {
+    width: 45%;
+}
+
+.skills-tabs .skills-content .content-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.skills-tabs .skills-content .skills-since {
+    font-family: 'Source Code Pro', monospace;
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.skills-tabs .skills-content .skills-products {
+    color: var(--primary);
+    font-style: italic;
+    margin-top: 14px;
+    margin-bottom: 40px;
+    font-size: 0.8rem;
+}
+
+.skills-tabs .skills-content .skills-tools {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.skills-tabs .skills-content .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 5px;
+}
+
+.skills-tabs .skills-content .badges .tool-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    padding: 10px 10px 10px 12px;
+    font-size: 0.8rem;
+    background-color: var(--primary);
+    color: var(--black);
+}
+
+.skills-tabs .skills-content .badges .tool-badge svg {
+    width: 18px;
+    height: 18px;
+}
+
+.tool-badge svg {
+    fill: currentColor;
+}
+
+.tool-badge[data-type="language"] { 
+    border-color: #61dafb !important; 
+}
+
+.tool-badge[data-type="framework"] { 
+    border-color: #8cc84b !important; 
 }

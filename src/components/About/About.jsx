@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div className="about-section">
+        <div id="about" className="about-section">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -12,7 +12,7 @@ const About = () => {
             >
                 <div className="outside-container">
                 <div className="inside-container">
-                        <h3 id="about">About</h3>
+                        <h3>About</h3>
                         <h2>Get to know me</h2>
                         <div className="flex-center">
                             <p>Hello there! Ik ben Britt Emanuel, grafisch ontwerper en webdeveloper. Van kinds af aan speelde ik met Paint en WordArt en bewonderde ik games om hun design. Wat ooit nieuwsgierigheid was, groeide uit tot een passie voor digitale ervaringen die zowel mooi als slim zijn.</p>

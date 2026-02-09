@@ -59,11 +59,11 @@ const Hero = () => {
                         ))}
                     </div>
                 </div>
-                <div className='hero-container-image'>
+                {/* <div className='hero-container-image'>
                     <div className='me-groot'>
                         <img src='./background/Portfolio_Britt_v4.png'></img>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

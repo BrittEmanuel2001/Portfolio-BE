@@ -29,7 +29,7 @@ const ServicesSection = ({ setActiveTab }) => {
 
     const handleNavigation = (tabId) => {
         setActiveTab(tabId);
-        const target = document.getElementById("skills");
+        const target = document.getElementById("profiel");
         if (target) {
             target.scrollIntoView({ behavior: "smooth" });
         }
@@ -49,7 +49,7 @@ const ServicesSection = ({ setActiveTab }) => {
                     variants={itemVariants}
                     onClick={() => handleNavigation(1)}
                 >
-                    <div><PenTool className="mirror" /></div>
+                    <div><PenTool /></div>
                     <p>Graphic Design</p>
                 </motion.div>
 

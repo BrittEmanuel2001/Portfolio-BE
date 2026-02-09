@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@coreui/icons": "^3.0.1",
+    "@coreui/icons-react": "^2.3.0",
     "gsap": "^3.14.2",
     "lucide-react": "^0.563.0",
     "motion": "^12.33.0",
