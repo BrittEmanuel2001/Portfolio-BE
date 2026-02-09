@@ -7,15 +7,14 @@ const tabs = [
   { id: 4, title: "Back-end development", content: "Backend" },
 ];
 
-const SkillsSectie = () => {
-  const [activeTab, setActiveTab] = useState(1);
+const SkillsSectie = ({ activeTab, setActiveTab }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveTab((prev) => (prev === tabs.length ? 1 : prev + 1));
     }, 20000);
     return () => clearInterval(interval);
-  }, []);
+  }, [setActiveTab]);
 
   return (
     <div id="skills" style={{ display: "flex", gap: "2rem", padding: "2rem" }}>

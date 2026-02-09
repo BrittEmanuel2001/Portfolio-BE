@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import SkillsSectie from "./SkillsSectie";
 import './Profiel.css';
 
-const About = () => {
+const About = ({ activeTab, setActiveTab }) => {
     return (
         <div className="profiel-section">
             <motion.div
@@ -16,7 +16,7 @@ const About = () => {
                         <h3 id="profiel">Profiel</h3>
                         <h2>Skills & ervaring</h2>
 
-                        <SkillsSectie />
+                        <SkillsSectie activeTab={activeTab} setActiveTab={setActiveTab} />
                     </div>
                 </div>
             </motion.div>

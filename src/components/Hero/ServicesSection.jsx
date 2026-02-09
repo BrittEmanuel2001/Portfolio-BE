@@ -25,7 +25,16 @@ const itemVariants = {
     }
 };
 
-const ServicesSection = () => {
+const ServicesSection = ({ setActiveTab }) => {
+
+    const handleNavigation = (tabId) => {
+        setActiveTab(tabId);
+        const target = document.getElementById("skills");
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="outside-container white-border skills-section">
             <motion.div
@@ -38,12 +47,7 @@ const ServicesSection = () => {
                 <motion.div 
                     className="flex-center skill-topic" 
                     variants={itemVariants}
-                    onClick={() => {
-                        const target = document.getElementById("skills");
-                        if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }}
+                    onClick={() => handleNavigation(1)}
                 >
                     <div><PenTool className="mirror" /></div>
                     <p>Graphic Design</p>
@@ -52,12 +56,7 @@ const ServicesSection = () => {
                 <motion.div 
                     className="flex-center skill-topic" 
                     variants={itemVariants}
-                    onClick={() => {
-                        const target = document.getElementById("skills");
-                        if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }}
+                    onClick={() => handleNavigation(2)}
                 >
                     <div><Monitor /></div>
                     <p>UI/UX design</p>
@@ -66,12 +65,7 @@ const ServicesSection = () => {
                 <motion.div 
                     className="flex-center skill-topic" 
                     variants={itemVariants}
-                    onClick={() => {
-                        const target = document.getElementById("skills");
-                        if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }}
+                    onClick={() => handleNavigation(3)}
                 >
                     <div><i className="fa-solid fa-code" /></div>
                     <p>Front-end development</p>
@@ -80,12 +74,7 @@ const ServicesSection = () => {
                 <motion.div 
                     className="flex-center skill-topic" 
                     variants={itemVariants}
-                    onClick={() => {
-                        const target = document.getElementById("skills");
-                        if (target) {
-                            target.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }}
+                    onClick={() => handleNavigation(4)}
                 >
                     <div><Server /></div>
                     <p>Back-end development</p>
