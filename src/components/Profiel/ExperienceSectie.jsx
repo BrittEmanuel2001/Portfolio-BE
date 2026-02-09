@@ -1,22 +1,17 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import data from "../../api/ExperienceData";
 
 const tabs = ["Opleiding", "Werkervaring"];
 
-const cardsData = {
-    Opleiding: [
-        { title: "School 1", description: "Beschrijving 1" },
-        { title: "School 2", description: "Beschrijving 2" },
-        { title: "School 3", description: "Beschrijving 3" }
-    ],
-    Werkervaring: [
-        { title: "job 1", description: "Beschrijving 1" },
-        { title: "job 2", description: "Beschrijving 2" },
-        { title: "job 3", description: "Beschrijving 3" }
-    ],
-};
-
 const ExperienceSectie = () => {
     const [activeTab, setActiveTab] = useState(tabs[0]);
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+        exit: { opacity: 0, y: -20 },
+    };
 
     return (
         <div className="experience-section">
@@ -25,30 +20,44 @@ const ExperienceSectie = () => {
                 {tabs.map((tab) => {
                     const isActive = activeTab === tab;
                     return (
-                        <button
+                        <motion.button
                             key={tab}
                             onClick={() => setActiveTab(tab)}
                             style={{
                                 opacity: isActive ? "1" : "0.3",
                                 fontWeight: isActive ? "800" : "bold",
+                                fontSize: isActive ? "1rem" : "0.9rem",
                             }}
+                            whileHover={{ scale: 1.05, opacity: 1 }}
+                            whileTap={{ scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         >
                             {tab}
-                        </button>
+                        </motion.button>
                     );
                 })}
             </div>
 
             {/* Cards */}
             <div className="experience-cards">
-                {cardsData[activeTab].map((card, index) => (
-                    <div className="experience-card">
-                        <p>01.09.2013 - 30.06.2019</p>
-                        <p>Diploma Secundair Onderwijs</p>
-                        <p>Economie-moderne talen <span>(met grote onderscheiding)</span></p>
-                        <p>Sint-Vincentiuscollege, Buggenhout</p>
-                    </div>
-                ))}
+                <AnimatePresence mode="wait">
+                    {data[activeTab].map((card, index) => (
+                        <motion.div 
+                            key={card.title}
+                            className="experience-card"
+                            variants={cardVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                        >
+                            <p className="date">{card.date}</p>
+                            <p className="title">{card.title}</p>
+                            <p className="description">{card.description}</p>
+                            <p className="location">{card.location}</p>
+                        </motion.div>
+                    ))}
+                </AnimatePresence>
             </div>
         </div>
 

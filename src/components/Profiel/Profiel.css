@@ -148,8 +148,8 @@
     bottom: 0;
     left: 0;
     opacity: 0.1;
-    width: 40%;
-    transform: translateY(40px) translateX(-30px);
+    width: 45%;
+    transform: translateY(60px) translateX(-60px) scale(115%);
 }
 
 .experience-section {
@@ -159,7 +159,7 @@
 .experience-tabs {
     display: flex;
     gap: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .experience-tabs button {
@@ -172,22 +172,50 @@
 
 .experience-cards {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     width: 100%;
     gap: 30px;
     position: relative;
     z-index: 5;
+    margin-bottom: 50px;
 }
 
 .experience-cards .experience-card {
     flex: 1;
     min-width: 0;
     background-color: var(--darker-grey);
-    padding: 30px 40px 30px 30px;
+    padding: 20px 30px 30px 30px;
     border-left: 2px var(--primary) solid;
 }
 
+.experience-cards .experience-card .date {
+    font-family: 'Source Code Pro', monospace;
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.experience-cards .experience-card .title {
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 20px;
+}
+
+.experience-cards .experience-card .description {
+    font-size: 0.7rem;
+    line-height: 1.3rem;
+}
+
+.experience-cards .experience-card .description span {
+    color: var(--primary);
+    font-style: italic;
+}
+
+.experience-cards .experience-card .location {
+    font-size: 0.7rem;
+    color: #7D8493;
+}
 
 
 
@@ -216,6 +244,11 @@
 
     .skills-tabs .skills-buttons button {
         width: 45%;
+    }
+
+    .experience-cards .experience-card {
+        flex: 1 1 100%;
+        box-sizing: border-box;
     }
 }
 
