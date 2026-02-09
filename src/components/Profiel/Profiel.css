@@ -1,7 +1,7 @@
 .skills-tabs {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 50px;
     height: 100%;
 }
@@ -12,6 +12,7 @@
 
 .skills-tabs .skills-content {
     width: 75%;
+    min-height: 440px;
 }
 
 .skills-tabs .skills-buttons {
@@ -20,6 +21,7 @@
     justify-content: space-between;
     gap: 40px;
     height: 100%;
+    padding-top: 30px;
 }
 
 .skills-tabs button {

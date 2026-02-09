@@ -2,6 +2,34 @@ import { useEffect } from "react";
 import tabs from "../../api/SkillsData";
 import CIcon from "@coreui/icons-react";
 import * as icons from "@coreui/icons";
+import { motion, AnimatePresence } from "framer-motion";
+
+const contentVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.35,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.05,
+    },
+  },
+  exit: { opacity: 0, y: -10, transition: { duration: 0.2 } },
+};
+
+const badgeVariants = {
+  hidden: { opacity: 0, y: 6 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const imageVariants = {
+  hidden: { opacity: 0, scale: 1.02 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  exit: { opacity: 0, scale: 0.98 },
+};
+
 
 const SkillsSectie = ({ activeTab, setActiveTab }) => {
 
@@ -17,27 +45,42 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
   return (
     <div className="skills-tabs">
         <div className="skills-buttons">
-            {tabs.map((tab) => {
-                const TabIcon = tab.icon;
-                return (
-                    <button
-                        key={tab.id}
-                        onClick={() => setActiveTab(tab.id)}
-                        style={{
-                            opacity: activeTab === tab.id ? "1" : "0.3",
-                            fontWeight: activeTab === tab.id ? "800" : "bold",
-                        }}
-                    >
-                        <span style={{ borderBottom: activeTab === tab.id ? "2px solid var(--primary)" : "" }}>
-                            <TabIcon />
-                        </span>
-                        {tab.title}
-                    </button>
-                );
-            })}
+          {tabs.map((tab) => {
+            const TabIcon = tab.icon;
+            const isActive = activeTab === tab.id;
+
+            return (
+              <motion.button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                style={{
+                  fontWeight: isActive ? "800" : "bold",
+                }}
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
+                whileTap={{ scale: 0.97 }}
+                animate={{
+                  opacity: isActive ? 1 : 0.3,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <span style={{borderBottom: isActive ? "2px solid var(--primary)" : "2px solid transparent"}}>
+                  <TabIcon />
+                </span>
+                {tab.title}
+              </motion.button>
+            );
+          })}
         </div>
 
-        <div className="skills-content">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={active.id}
+            className="skills-content"
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
             <div className="content-text">
                 <p className="skills-since">Since {active.since}</p>
                 <h4>{active.title} skillset</h4>
@@ -45,22 +88,27 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
                 <p className="skills-products">{active.products}</p>
 
                 <p className="skills-tools"><strong>Tools:</strong></p>
-                <div className="badges">
+                <motion.div className="badges">
                     {active.tools.map((tool, i) => {
-                        const ToolIcon = tool.icon;
                         return (
-                            <div className="tool-badge" key={i} data-type={tool.type}>
+                            <motion.div
+                              className="tool-badge"
+                              key={i}
+                              data-type={tool.type}
+                              variants={badgeVariants}
+                            >
                                 <CIcon icon={icons[tool.icon]} size="sm" className="tool-icon" />
                                 {tool.name}
-                            </div>
+                            </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
             </div>
             <div className="content-image">
                 <img src={`./projects/${active.image}`} />
             </div>
-        </div>
+          </motion.div>
+        </AnimatePresence>
     </div>
   );
 };

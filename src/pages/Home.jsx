@@ -43,6 +43,7 @@ const Home = () => {
 
             <About />
             <Profiel activeTab={activeTab} setActiveTab={setActiveTab} />
+            <About />
         </>
     );
 };
