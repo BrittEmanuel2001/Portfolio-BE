@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div id="about" className="about-section">
+        <div id="about" className="about-section white-border">
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}

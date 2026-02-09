@@ -85,7 +85,7 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
                 <p className="skills-since">Since {active.since}</p>
                 <h4>{active.title} skillset</h4>
                 <p>{active.content}</p>
-                <p className="skills-products">{active.products}</p>
+                {/* <p className="skills-products">{active.products}</p> */}
 
                 <p className="skills-tools"><strong>Tools:</strong></p>
                 <motion.div className="badges">

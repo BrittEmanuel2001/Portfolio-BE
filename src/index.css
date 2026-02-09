@@ -97,6 +97,16 @@ button {
     cursor: not-allowed;
 }
 
+.skills-section.outside-container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.skills-section .inside-container {
+    gap: 10px 10px;
+    justify-content: space-between;
+}
+
 .skill-topic {
     gap: 15px; 
     font-weight: 600;
@@ -117,7 +127,6 @@ button {
     justify-content: center;
     align-items: center;
     background-color: var(--dark-grey);
-    border-bottom: 2px solid var(--primary);
     padding: 10px;
     aspect-ratio: 1/1;
     transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
@@ -201,6 +210,20 @@ button {
         opacity: 1 !important;
         color: white;
     }
+
+    .skills-section.outside-container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .skills-section .inside-container {
+        gap: 20px 10px;
+        justify-content: space-between;
+    }
+
+    .skill-topic div {
+        border-bottom: 2px solid var(--primary);
+    }
 }
 
 /* MOBILE */
@@ -242,5 +265,9 @@ button {
     .about-section .outside-container,
     .profiel-section .outside-container {
         padding: 120px 14%;
+    }
+
+    .skills-section .inside-container {
+        gap: 60px 10px;
     }
 }

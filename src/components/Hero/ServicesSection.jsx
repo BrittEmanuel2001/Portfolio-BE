@@ -36,9 +36,9 @@ const ServicesSection = ({ setActiveTab }) => {
     };
 
     return (
-        <div className="outside-container white-border skills-section">
+        <div className="white-border outside-container skills-section">
             <motion.div
-                className="inside-container flex-between"
+                className="inside-container flex-center"
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"

@@ -58,7 +58,8 @@
 }
 
 .hero-content {
-    z-index: 2;
+    position: relative;
+    z-index: 2000;
 }
 
 .text h1 {
@@ -85,7 +86,7 @@
     gap: 5px;
     bottom: 20px;
     position: absolute;
-    z-index: 3;
+    z-index: 7;
 }
 
 .socials a {
@@ -104,6 +105,7 @@
     width: 100%;
     position: absolute;
     box-sizing: border-box;
+    z-index: 5;
 }
 
 .hero-section .hero-container-image .me-groot {
@@ -114,6 +116,7 @@
     right: 0;
     overflow: hidden;
     display: flex;
+    z-index: 5;
 }
 
 .hero-section .me-groot img {
