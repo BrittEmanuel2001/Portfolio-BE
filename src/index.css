@@ -181,7 +181,7 @@ button {
 
 .about-section .outside-container,
 .profiel-section .outside-container {
-    padding: 130px 10% 110px;
+    padding: 110px 10%;
 }
 
 
@@ -198,6 +198,8 @@ button {
     .skill-topic {
         width: 45%;
         justify-content: flex-start;
+        opacity: 1 !important;
+        color: white;
     }
 }
 
@@ -205,9 +207,6 @@ button {
 /* ====== */
 
 @media (max-width: 765px) {
-    .skills-section {
-        display: none;
-    }
     
     .skill-topic {
         width: 100%;
@@ -240,7 +239,8 @@ button {
         font-size: 0.9rem;
     }
 
-    .about-section .outside-container {
-        padding: 140px 14% 110px;
+    .about-section .outside-container,
+    .profiel-section .outside-container {
+        padding: 120px 14%;
     }
 }

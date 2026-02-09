@@ -183,14 +183,11 @@
     }
 
     .hero-section, .hero-section .outside-container {
-        height: calc(80vh - 60px);
-        min-height: fit-content;
-        max-height: unset;
+        height: fit-content;
         box-sizing: border-box;
     }
 
     .hero-container {
-        height: calc(80vh - 60px);
         min-height: fit-content;
         max-height: unset;
     }
@@ -211,6 +208,7 @@
 
     .hero-content .text button {
         width: auto;
+        margin-bottom: 130px;
     }
 
     .hero-section .gradient {

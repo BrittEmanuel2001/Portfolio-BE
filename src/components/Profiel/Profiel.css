@@ -120,3 +120,59 @@
 .tool-badge[data-type="framework"] { 
     border-color: #8cc84b !important; 
 }
+
+/* TABLET */
+/* ====== */
+
+@media (max-width: 1024px) {
+    .skills-tabs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .skills-tabs .skills-buttons,
+    .skills-tabs .skills-content {
+        width: 100%;
+    }
+
+    .skills-tabs .skills-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .skills-tabs .skills-buttons button {
+        width: 45%;
+    }
+}
+
+/* MOBILE */
+/* ====== */
+
+@media (max-width: 765px) {
+
+    .skills-tabs .skills-buttons button {
+        width: auto;
+    }
+    
+    .skills-tabs .skills-buttons {
+        gap: 10px;
+        padding-top: 0;
+    }
+
+    .skills-tabs .skills-buttons p {
+        display: none;
+    }
+
+    .skills-tabs .skills-content .content-image {
+        display: none;
+    }
+
+    .skills-tabs .skills-content .content-text {
+        width: 100%;
+        padding: 40px;
+    }
+}

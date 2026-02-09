@@ -66,7 +66,7 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
                 <span style={{borderBottom: isActive ? "2px solid var(--primary)" : "2px solid transparent"}}>
                   <TabIcon />
                 </span>
-                {tab.title}
+                <p>{tab.title}</p>
               </motion.button>
             );
           })}
