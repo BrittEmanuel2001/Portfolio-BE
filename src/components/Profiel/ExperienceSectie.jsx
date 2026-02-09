@@ -25,7 +25,7 @@ const ExperienceSectie = () => {
                             onClick={() => setActiveTab(tab)}
                             style={{
                                 opacity: isActive ? "1" : "0.3",
-                                fontWeight: isActive ? "800" : "bold",
+                                fontWeight: isActive ? "700" : "400",
                                 fontSize: isActive ? "1rem" : "0.9rem",
                             }}
                             whileHover={{ scale: 1.05, opacity: 1 }}

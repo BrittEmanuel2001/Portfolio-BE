@@ -22,7 +22,7 @@ const Hero = () => {
                     <div className="text">
                             <AnimatedH1 />
                             <p style={{fontSize: "1.2rem", paddingBottom: "20px", fontFamily: "montserrat"}}>Krachtig, authentiek en helemaal jij.</p>
-                            <p><span style={{color: "var(--dark-grey)", fontSize: "1.2rem"}}>By Britt Emanuel</span></p>
+                            <p><span style={{color: "var(--dark-grey)", fontSize: "1.1rem"}}>By Britt Emanuel</span></p>
                             
                             <motion.button
                                 className="button-primary"

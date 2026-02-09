@@ -54,7 +54,7 @@ const SkillsSectie = ({ activeTab, setActiveTab }) => {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 style={{
-                  fontWeight: isActive ? "800" : "bold",
+                  fontWeight: isActive ? "700" : "400",
                 }}
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
                 whileTap={{ scale: 0.97 }}
