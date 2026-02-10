@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import projects from "../../api/ProjectsData";
 import './Projects.css';
 
 const Projects = () => {
@@ -16,24 +17,11 @@ const Projects = () => {
                         <h2>Projectoverzicht</h2>
 
                         <div className="images-container">
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
-                            <div className="project-card">
-                                <img className="project-image" src="./projects/Project_CampusApp.jpg" />
-                            </div>
+                            {projects.map((p) => (
+                                <div className="project-card">
+                                    <img className="project-image" src={`./projects/${p.image}`} alt={p.name} />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

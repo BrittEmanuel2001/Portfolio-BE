@@ -10,7 +10,7 @@
 }
 
 .images-container .project-card {
-    height: 275px;
+    aspect-ratio: 4/3;
 }
 
 .images-container .project-card .project-image {
@@ -26,4 +26,26 @@
 
 .images-container .project-card {
 
+}
+
+/* TABLET */
+/* ====== */
+
+@media (max-width: 1024px) {
+    .projects-section .images-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+/* ====== */
+
+@media (max-width: 765px) {
+    .projects-section .images-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .images-container .project-card {
+        aspect-ratio: 5/3;
+    }
 }
