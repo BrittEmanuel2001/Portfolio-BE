@@ -5,6 +5,7 @@ import ServicesSection from "../components/Hero/ServicesSection";
 import About from "../components/About/About";
 import Profiel from "../components/Profiel/Profiel";
 import Projects from "../components/Projects/Projects";
+import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
 
 const containerVariants = {
@@ -47,6 +48,7 @@ const Home = () => {
             <Profiel activeTab={activeTab} setActiveTab={setActiveTab} />
             <Projects />
 
+            <Contact />
             <Footer />
         </>
     );

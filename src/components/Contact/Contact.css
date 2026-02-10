@@ -1,0 +1,107 @@
+.contact-section .outside-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section .outside-container .contact-letters {
+    position: absolute;
+    left: 45%;
+    height: 100%;
+    width: 55%;
+    transform: translateX(2.5%) scale(105%);
+    object-fit: cover;
+    object-position: left center;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.contact-section .outside-container .inside-container {
+
+    display: flex;
+    gap: 0;
+}
+
+.contact-section .outside-container .inside-container .contact-info {
+    width: 45%;
+    padding: 60px 0;
+}
+
+.contact-section .outside-container .inside-container .contact-form-col {
+    width: 55%;
+}
+
+.contact-section .outside-container .inside-container .contact-info h2,
+.contact-section .outside-container .inside-container .contact-info h3 {
+    text-align: left;
+}
+
+.contact-section .outside-container .inside-container .contact-info p {
+    padding-bottom: 60px;
+}
+
+.contact-section .outside-container .inside-container .contact-info a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    transition: all 0.25s ease-in-out;
+}
+
+.contact-section .outside-container .inside-container .contact-info a:hover {
+    color: var(--primary);
+}
+
+.contact-section .outside-container .inside-container .contact-info i {
+    color: var(--primary);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.contact-section .outside-container .inside-container .contact-info a:nth-of-type(2) i {
+    color: var(--primary);
+    font-size: 1.3rem;
+    padding-right: 4px;
+}
+
+
+/* TABLET */
+/* ====== */
+
+@media (max-width: 1024px) {
+    .contact-section .outside-container .contact-letters {
+        transform: translateX(22.5%) scale(120%);
+        object-fit: cover;
+        pointer-events: none;
+        opacity: 0.1;
+    }
+}
+
+
+/* MOBILE */
+/* ====== */
+
+@media (max-width: 765px) {
+    .contact-section .outside-container .inside-container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-section .outside-container .inside-container .contact-info {
+        width: 100%;
+        padding: 60px 0;
+    }
+
+    .contact-section .outside-container .inside-container .contact-form-col {
+        width: 100%;
+    }
+
+    .contact-section .outside-container .contact-letters {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        transform: scale(130%) translateY(50px) translateX(10%);
+    }
+}

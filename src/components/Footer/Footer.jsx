@@ -7,7 +7,7 @@ const socials = [
 
 const Footer = () => {
     return (
-        <div className="outside-container footer-container">
+        <div className="outside-container footer-container white-border">
             <div className="inside-container footer">
                 <p>© 2026 Britt Emanuel - Alle rechten voorbehouden</p>
                 <div>

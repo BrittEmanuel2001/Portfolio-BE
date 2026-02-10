@@ -200,6 +200,9 @@ button {
 .outside-container.footer-container {
     padding-top: 30px;
     padding-bottom: 50px;
+    position: relative;
+    background-color: var(--black);
+    border-bottom: 0;
 }
 
 .outside-container .inside-container.footer {
