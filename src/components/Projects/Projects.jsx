@@ -35,9 +35,8 @@ const Projects = () => {
         if (!activeProject) return;
 
         const projectLink = activeProject.link;
-        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-        if (navigator.share && isMobile) {
+        if (navigator.share) {
             try {
                 await navigator.share({
                     title: `Check dit project: ${activeProject.name}`,
@@ -138,7 +137,10 @@ const Projects = () => {
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                         className="link-icon"
                                     >
-                                        <a href={activeProject.link} target="_blank"><CIcon icon={icons["cibGithub"]} /></a>
+                                        <a href={activeProject.link} target="_blank">
+                                            {activeProject.category === "Development" && (<CIcon icon={icons["cibGithub"]} />)}
+                                            {activeProject.category === "Design" && (<CIcon icon={icons["cilExternalLink"]} />)}
+                                        </a>
                                     </motion.div>
 
                                     <motion.div
