@@ -131,9 +131,6 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    /* background-color: var(--dark-grey); */
-    /* border-right: 2px solid var(--primary); */
-    /* padding: 10px 20px 10px 10px; */
     aspect-ratio: 1/1;
     transition: all 0.25s ease-in-out;
 }
@@ -198,6 +195,32 @@ button {
 .profiel-section .outside-container,
 .projects-section .outside-container {
     padding: 110px 10%;
+}
+
+.outside-container.footer-container {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.outside-container .inside-container.footer {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-between;
+}
+
+.outside-container .footer div {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.outside-container .footer div i {
+    color: white;
+    font-size: 20px;
+}
+
+.outside-container .footer div i:hover {
+    color: var(--primary);
 }
 
 
@@ -277,5 +300,17 @@ button {
 
     .skills-section .inside-container {
         gap: 60px 10px;
+    }
+
+    .outside-container .inside-container.footer {
+        flex-direction: column-reverse !important;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .outside-container .inside-container.footer div {
+        display: none;
     }
 }

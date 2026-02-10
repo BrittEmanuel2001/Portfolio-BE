@@ -5,6 +5,7 @@ import ServicesSection from "../components/Hero/ServicesSection";
 import About from "../components/About/About";
 import Profiel from "../components/Profiel/Profiel";
 import Projects from "../components/Projects/Projects";
+import Footer from "../components/Footer/Footer";
 
 const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -46,7 +47,7 @@ const Home = () => {
             <Profiel activeTab={activeTab} setActiveTab={setActiveTab} />
             <Projects />
 
-            <div style={{backgroundColor:"var(--black)", padding:"80px"}}>Contact + footer</div>
+            <Footer />
         </>
     );
 };
