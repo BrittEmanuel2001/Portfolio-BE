@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import './Contact.css';
 
 const Contact = () => {
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const isValid = emailRegex.test(email.trim()) && message.trim() !== "";
+
     return (
         <div className="contact-section">
             <motion.div
@@ -23,27 +30,37 @@ const Contact = () => {
                         <div className="contact-form-col">
                             <form class="contact-form">
                                 <div class="form-group">
-                                    <label for="email">E-mailadres</label>
+                                    <label htmlFor="email">E-mailadres</label>
                                     <input
                                         type="email"
                                         id="email"
                                         name="email"
-                                        placeholder="jij@email.com"
+                                        placeholder="user@mail.be"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
                                         required
                                     />
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="message">Boodschap</label>
+                                    <label htmlFor="message">Boodschap</label>
                                     <textarea
                                         id="message"
                                         name="message"
-                                        rows="5"
+                                        rows="9"
                                         placeholder="Schrijf hier je boodschap…"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
                                         required
                                     ></textarea>
                                 </div>
-                                <button type="submit" class="submit-btn">Verzenden</button>
+                                <button 
+                                    type="submit" 
+                                    class="submit-btn"
+                                    disabled={!isValid}
+                                >
+                                    Verzenden
+                                </button>
                             </form>
                         </div>
                     </div>
