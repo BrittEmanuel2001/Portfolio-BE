@@ -75,6 +75,7 @@ button {
 button:disabled {
     opacity: 0.3;
     color: white;
+    cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {

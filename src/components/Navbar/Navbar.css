@@ -121,7 +121,7 @@
         border-bottom: 1px solid white;
         align-items: center;
         height: 60px;
-        padding: 0 8%;
+        padding: 0 3%;
     }
 
     .nav-top-mobile img {
@@ -193,5 +193,14 @@
     .mobile-menu .cv a svg {
         width: 20px;
         height: 20px;
+    }
+}
+
+/* MOBILE */
+/* ====== */
+
+@media (max-width: 765px) {
+    .nav-top-mobile {
+        padding: 0 8%;
     }
 }

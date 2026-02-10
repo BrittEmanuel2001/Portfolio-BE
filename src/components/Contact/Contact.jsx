@@ -1,13 +1,29 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { AnimatePresence, motion } from "framer-motion";
 import './Contact.css';
 
 const Contact = () => {
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const [snackbar, setSnackbar] = useState({ show: false, message: '', type: 'success'});
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm({mode: "onChange"});
 
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const isValid = emailRegex.test(email.trim()) && message.trim() !== "";
+    const onSubmit = async (data) => {
+        try {
+            await new Promise((resolve) => setTimeout(resolve, 2000))
+            reset();
+            setSnackbar({ show: true, message: 'Bericht succesvol verzonden!', type: 'success' });
+        } catch(err) {
+            setSnackbar({ show: true, message: 'Er is iets misgegaan. Probeer opnieuw.', type: 'error' });
+        }
+    };
+
+    // Verberg snackbar na 3 seconden automatisch
+    useEffect(() => {
+        if (snackbar.show) {
+            const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 3000);
+            return () => clearTimeout(timer);
+        }
+    }, [snackbar]);
 
     return (
         <div className="contact-section">
@@ -28,38 +44,45 @@ const Contact = () => {
                             <a href="https://www.linkedin.com/in/britt-emanuel"><i className="fa-brands fa-linkedin"></i> britt-emanuel</a>
                         </div>
                         <div className="contact-form-col">
-                            <form class="contact-form">
-                                <div class="form-group">
+                            <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                                <div className="form-group">
                                     <label htmlFor="email">E-mailadres</label>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        placeholder="user@mail.be"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        required
+                                    <input type="email" id="email" placeholder="user@mail.be" 
+                                        {...register("email", {
+                                            required: "E-mailadres is verplicht",
+                                            pattern: {
+                                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                                message: "Ongeldig e-mailadres"
+                                            }
+                                        })}
                                     />
+                                    {errors.email && <p className='error'>{errors.email.message}</p>}
                                 </div>
 
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label htmlFor="message">Boodschap</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows="9"
-                                        placeholder="Schrijf hier je boodschap…"
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                        required
+                                    <textarea id="message" rows="9" placeholder="Schrijf hier je boodschap…"
+                                        {...register("message", {
+                                            required: "Boodschap is verplicht",
+                                            minLength: {
+                                                value: 10,
+                                                message: "Boodschap moet minimaal 10 tekens lang zijn"
+                                            }
+                                        })}
                                     ></textarea>
+                                    {errors.message && <p className='error'>{errors.message.message}</p>}
                                 </div>
                                 <button 
                                     type="submit" 
-                                    class="submit-btn"
-                                    disabled={!isValid}
+                                    className="submit-btn"
+                                    disabled={!isValid || isSubmitting}
                                 >
-                                    Verzenden
+                                    {isSubmitting && (
+                                        <motion.div className='spinner' animate={{ rotate: 360 }}
+                                        transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                                        />
+                                    )}
+                                    <span>{isSubmitting ? "" : "Verzenden"}</span>
                                 </button>
                             </form>
                         </div>
@@ -67,6 +90,27 @@ const Contact = () => {
                     <img src="./background/BE-letters.svg" className="contact-letters" />
                 </div>
             </motion.div>
+
+            <AnimatePresence>
+                {snackbar.show && (
+                <motion.div 
+                    className={`snackbar ${snackbar.type}`} 
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }} 
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ type: 'ease', stiffness: 200 }} 
+                >
+                    <span>{snackbar.message}</span>
+                    <button 
+                        className="close-btn" 
+                        onClick={() => setSnackbar({ ...snackbar, show: false })}
+                        disabled={isSubmitting}
+                    >
+                    ×
+                    </button>
+                </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }
