@@ -39,6 +39,7 @@
 
 .contact-section .outside-container .inside-container .contact-info p {
     padding-bottom: 60px;
+    max-width: 90%;
 }
 
 .contact-section .outside-container .inside-container .contact-info a {
@@ -132,6 +133,10 @@
         pointer-events: none;
         opacity: 0.1;
     }
+
+    .contact-form-col .contact-form {
+        padding-left: 100px;
+    }
 }
 
 
@@ -146,7 +151,11 @@
 
     .contact-section .outside-container .inside-container .contact-info {
         width: 100%;
-        padding: 60px 0;
+        padding: 0;
+    }
+
+    .contact-section .outside-container .inside-container .contact-info p {
+        max-width: 100%;
     }
 
     .contact-section .outside-container .inside-container .contact-form-col {
@@ -159,5 +168,9 @@
         width: 100%;
         height: auto;
         transform: scale(130%) translateY(50px) translateX(10%);
+    }
+
+    .contact-form-col .contact-form {
+        padding: 0;
     }
 }

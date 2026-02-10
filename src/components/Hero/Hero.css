@@ -266,15 +266,18 @@
     } */
 
     .hero-section .BE-letters {
+        background-color: #121418;
         left: 78%;
-        opacity: 0.6;
+        opacity: 1;
     }
 
     .hero-section .BE-letters img {
+        /* display: none; */
         object-fit: cover;
-        object-position: left;
+        object-position: right;
         height: 100%;
-        transform: scale(1.7) translateX(20%);
+        transform: scale(1.8) translateY(20%) translateX(10%);
+        opacity: 0.9;
     }
 
     .hero {
@@ -292,7 +295,7 @@
     } */
 
     .hero-section, .hero-section .outside-container {
-        height: calc(90vh - 60px);
+        height: calc(95vh - 60px);
         min-height: 80vh;
         max-height: unset;
     }

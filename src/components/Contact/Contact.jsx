@@ -22,7 +22,7 @@ const Contact = () => {
                         <div className="contact-info">
                             <h3 id="contact">Contact</h3>
                             <h2>Samenwerken?</h2>
-                            <p>Ik ben altijd benieuwd naar nieuwe ideeën en uitdagingen. <br></br> Stuur me gerust een mail en we kijken wat mogelijk is.</p>
+                            <p>Ik ben altijd benieuwd naar nieuwe ideeën en uitdagingen. Stuur me gerust een mail en we kijken wat mogelijk is.</p>
                             <a href="tel:+32484070169"><i className="fa-solid fa-square-phone"></i> +32 484 070 169</a>
                             <a href="mailto:britt.emanuel@telenet.be"><i class="fa-solid fa-envelope"></i> britt.emanuel@telenet.be</a>
                             <a href="https://www.linkedin.com/in/britt-emanuel"><i className="fa-brands fa-linkedin"></i> britt-emanuel</a>

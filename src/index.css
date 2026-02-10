@@ -307,7 +307,8 @@ button:hover:not(:disabled) {
 
     .about-section .outside-container,
     .profiel-section .outside-container,
-    .projects-section .outside-container {
+    .projects-section .outside-container,
+    .contact-section .outside-container {
         padding: 120px 14%;
     }
 
