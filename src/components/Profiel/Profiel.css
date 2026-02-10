@@ -248,6 +248,10 @@
         flex: 1 1 100%;
         box-sizing: border-box;
     }
+
+    .profiel-letters {
+        transform: translateY(-10px) translateX(-10px) scale(180%);
+    }
 }
 
 /* MOBILE */
@@ -275,5 +279,13 @@
     .skills-tabs .skills-content .content-text {
         width: 100%;
         padding: 40px;
+    }
+
+    .profiel-letters {
+        transform: translateY(-40px) translateX(50px) scale(250%);
+    }
+
+    .profiel-section .outside-container {
+        padding-bottom: 80px !important;
     }
 }

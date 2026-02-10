@@ -106,7 +106,7 @@ button {
 .skills-section .inside-container {
     gap: 10px;
     justify-content: flex-start;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .skill-topic {
@@ -219,17 +219,13 @@ button {
     }
 
     .skills-section.outside-container {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
     .skills-section .inside-container {
-        gap: 20px 10px;
+        /* gap: 20px 10px; */
         justify-content: space-between;
-    }
-
-    .skill-topic div {
-        border-bottom: 2px solid var(--primary);
     }
 }
 
@@ -237,6 +233,10 @@ button {
 /* ====== */
 
 @media (max-width: 765px) {
+
+    .skills-section {
+        display: none;
+    }
     
     .skill-topic {
         width: 100%;

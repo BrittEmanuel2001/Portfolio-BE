@@ -14,7 +14,7 @@ const Hero = () => {
         <div id="home" className="hero-section relative-container">
             <div className="gradient"></div>
             <div className='BE-letters'>
-                <img src='./background/BE-letters.svg'></img>
+                <img src='./background/Portfolio_Britt_v10.jpg'></img>
             </div>
             <div className='outside-container relative-container'>
                 <div className="inside-container relative-container">
