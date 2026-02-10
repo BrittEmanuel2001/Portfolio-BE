@@ -89,3 +89,151 @@
         font-size: 1.2rem;
     }
 }
+
+
+
+
+
+
+/* POPUP */
+/* ===== */
+
+.popup-bg {
+    position: fixed;
+    inset: 0;
+    padding-left: 150px;
+    background-color: rgba(9, 10, 15, 0.96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.popup {
+    background-color: var(--darker-grey);
+    max-width: 1000px;
+    margin: 60px;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    display: flex;
+}
+
+.popup .col1 {
+    width: calc(50% - 60px);
+}
+
+.popup .col2 {
+    width: calc(50% - 60px);
+}
+
+.popup img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.popup .col2 .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.popup-close {
+    cursor: pointer;
+    background-color: var(--dark-grey);
+    color: var(--primary);
+    padding: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.link-icon a {
+    color: white;
+    fill: currentColor;
+}
+
+.link-icon {
+    padding-right: 5px;
+    width: 28px;
+}
+
+.link-icon a:hover {
+    color: var(--primary);
+}
+
+.link-icon:last-child {
+    width: 23px;
+}
+
+.popup .col2 .popup-content {
+    width: 80%;
+    padding: 100px 70px 90px;
+}
+
+.popup .col2 .popup-content .accent {
+    padding-right: 5px;
+    color: #9396a9;
+}
+
+.popup .col2 .popup-content .category {
+    font-family: 'Source Code Pro', monospace;
+    color: var(--primary);
+    font-size: 0.8rem;
+    padding-bottom: 10px;
+}
+
+.popup .col2 .popup-content .project-name {
+    text-align: left;
+    font-size: 1.9rem;
+    line-height: 2.6rem;
+    font-weight: 600;
+    padding: 0 0 30px;
+}
+
+.popup .col2 .popup-content .project-description {
+    padding-bottom: 0;
+}
+
+.popup .col2 .popup-content .project-group {
+    padding-top: 12px;
+    font-size: 0.8rem;
+}
+
+.popup .col2 .popup-content .badges {
+    padding-top: 30px;
+}
+
+.popup .col2 .popup-content .project-group a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.popup .col2 .popup-content .project-group a:hover {
+    text-decoration: underline;
+}
+
+.popup .col2 .popup-content .tool-badge { 
+    background-color: var(--primary) !important; 
+    color: var(--black) !important;
+}
+
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .modal {
+        padding: 15px;
+    }
+
+    .modal h3 {
+        font-size: 1.2rem;
+    }
+}

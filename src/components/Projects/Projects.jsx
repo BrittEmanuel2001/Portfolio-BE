@@ -1,8 +1,35 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import projects from "../../api/ProjectsData";
-import './Projects.css';
+import CIcon from "@coreui/icons-react";
+import * as icons from "@coreui/icons";
+import "./Projects.css";
+
+const popupVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            staggerChildren: 0.1, // elke child komt 0.1s later
+            delayChildren: 0.1,
+        },
+    },
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
+
+const badgeVariants = {
+    hidden: { opacity: 0, y: 6 },
+    visible: { opacity: 1, y: 0 },
+};
 
 const Projects = () => {
+    const [activeProject, setActiveProject] = useState(null);
+
     return (
         <div className="projects-section white-border">
             <motion.div
@@ -17,17 +44,22 @@ const Projects = () => {
                         <h2>Projectoverzicht</h2>
 
                         <div className="images-container">
-                            {projects.map((p, index) => (
-                                <motion.div 
-                                    className="project-card" 
+                            {projects.map((p) => (
+                                <motion.div
+                                    className="project-card"
                                     key={p.id}
+                                    onClick={() => setActiveProject(p)}
                                     initial={{ opacity: 0, y: 40, scale: 0.95 }}
                                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                     viewport={{ once: false, amount: 0.3 }}
                                     transition={{ duration: 0.5, ease: "easeOut" }}
                                     whileHover={{ y: -8 }}
                                 >
-                                    <img className="project-image" src={`./projects/${p.image}`} alt={p.name} />
+                                    <img
+                                        className="project-image"
+                                        src={`./projects/${p.image}`}
+                                        alt={p.name}
+                                    />
                                     <div className="overlay">
                                         <span className="project-name">{p.name}</span>
                                     </div>
@@ -37,8 +69,111 @@ const Projects = () => {
                     </div>
                 </div>
             </motion.div>
-        </div>
 
+            {/* POPUP */}
+            <AnimatePresence>
+                {activeProject && (
+                    <motion.div
+                        className="popup-bg"
+                        onClick={() => setActiveProject(null)}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <motion.div
+                            className="popup"
+                            onClick={(e) => e.stopPropagation()}
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                        >
+                            <div className="col1">
+                                <img
+                                    src={`./projects/${activeProject.image}`}
+                                    alt={activeProject.name}
+                                />
+                            </div>
+
+                            <div className="col2">
+                                <div className="actions">
+                                    <motion.button
+                                        className="popup-close"
+                                        onClick={() => setActiveProject(null)}
+                                        whileHover={{ backgroundColor: "var(--grey)", color: "var(--primary)" }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        ✕
+                                    </motion.button>
+
+                                    <motion.div
+                                        whileHover={{ scale: 1.2, rotate: 15 }}
+                                        whileTap={{ scale: 0.9, rotate: 0 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                        className="link-icon"
+                                    >
+                                        <a href={activeProject.link}><CIcon icon={icons["cibGithub"]} /></a>
+                                    </motion.div>
+
+                                    <motion.div
+                                        whileHover={{ scale: 1.2, rotate: 15 }}
+                                        whileTap={{ scale: 0.9, rotate: 0 }}
+                                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                        className="link-icon"
+                                    >
+                                        <a href={activeProject.link}><CIcon icon={icons["cilShareAlt"]} /></a>
+                                    </motion.div>
+                                </div>
+
+                                <motion.div
+                                    className="popup-content"
+                                    variants={popupVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                >
+                                    <motion.p className="category" variants={itemVariants}>
+                                        {activeProject.category}
+                                    </motion.p>
+                                    <motion.p className="project-name" variants={itemVariants}>
+                                        {activeProject.name}
+                                    </motion.p>
+                                    <motion.p className="project-description" variants={itemVariants}>
+                                        {activeProject.description}
+                                    </motion.p>
+
+                                    {activeProject.team && (
+                                        <motion.p className="project-group" variants={itemVariants}>
+                                            <span className="accent">Team:</span>{" "}
+                                            {activeProject.team.map((member, index) => (
+                                                <span key={index}>
+                                                    <a href={member.link} target="_blank" rel="noopener noreferrer">
+                                                        {member.firstname}
+                                                    </a>
+                                                    {index < activeProject.team.length - 1 && ", "}
+                                                </span>
+                                            ))}
+                                        </motion.p>
+                                    )}
+
+                                    <motion.div className="badges" variants={itemVariants}>
+                                        {activeProject.tools.map((tool, i) => (
+                                            <motion.div
+                                                className="tool-badge"
+                                                key={i}
+                                                data-type={tool.type}
+                                                variants={itemVariants}
+                                            >
+                                                <CIcon icon={icons[tool.icon]} size="sm" className="tool-icon" />
+                                                {tool.name}
+                                            </motion.div>
+                                        ))}
+                                    </motion.div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 };
 

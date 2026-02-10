@@ -1,12 +1,12 @@
-const category = [ "Development", "Design"]
+const category = ["Development", "Design"];
 
 const projects = [
     {
         id: 1,
-        name: "TechSphere",
+        name: "TechSphere 2025",
         image: "Project_TechSphere.jpg",
         category: category[0],
-        description: "Schaalbare Spring Boot webapplicatie voor het organiseren en beheren van een techconferentie. Functionaliteiten omvatten gebruikersbeheer, het plannen van events en het beheren van ruimtes, met een focus op duidelijke structuur en uitbreidbaarheid.",
+        description: "Schaalbare Spring Boot webapplicatie voor het organiseren van een techconferentie, met gebruikersbeheer, eventplanning en ruimtebeheer.",
         tools: [
             { icon: "cibSpring", name: "Spring Boot", type: "framework" }
         ],
@@ -17,7 +17,7 @@ const projects = [
         name: "The End(o)game - Bachelorproef",
         image: "Project_TheEndogame.jpg",
         category: category[1],
-        description: "Bachelorproef en sluitstuk van mijn opleiding GDM, met als resultaat een educatief kaartspel dat bewustwording creëert rond endometriose. Het project combineert onderzoek, conceptontwikkeling en visueel ontwerp om een complexe en vaak onzichtbare ziekte toegankelijk en bespreekbaar te maken.",
+        description: "Educatief kaartspel dat bewustwording creëert rond endometriose, ontwikkeld als bachelorproef binnen GDM.",
         tools: [
             { icon: "cibAdobePhotoshop", name: "Adobe Photoshop" },
             { icon: "cibAdobeIllustrator", name: "Adobe Illustrator" },
@@ -30,19 +30,18 @@ const projects = [
         name: "Campus app",
         image: "Project_CampusApp.jpg",
         category: category[0],
-        description: "Proof of concept voor de My Campus-app in opdracht van HOGENT, een centrale mobiele applicatie die studenten ondersteunt door alle campusinformatie overzichtelijk en gebruiksvriendelijk te bundelen. Het project werd uitgevoerd als schoolopdracht en ons team werd verkozen tot beste groep.",
+        description: "Proof of concept voor een centrale campusapp voor HOGENT, ontwikkeld als schoolopdracht en verkozen tot beste project.",
         tools: [
             { icon: "cilLayers", name: "Blazor WebAssembly", type: "framework" },
             { icon: "cibDotNet", name: ".NET", type: "framework" },
             { icon: "cibC", name: "C#", type: "language" }
-
         ],
         team: [
             { firstname: "Milan", lastname: "Dhondt", link: "https://www.linkedin.com/in/milan-dhondt/" },
             { firstname: "Tristan", lastname: "Van Speybroeck", link: "https://www.linkedin.com/in/tristan-van-speybroeck-95987434a/" },
             { firstname: "Yenthly", lastname: "Devolder", link: "https://www.linkedin.com/in/yenthly-devolder-356690243/" },
             { firstname: "Eray", lastname: "Köksoy", link: "https://www.linkedin.com/in/eray-k%C3%B6ksoy-501665279/" },
-            { firstname: "Maxim", lastname: "Bauwelinck", link: "https://www.linkedin.com/in/maxim-bauwelinck-a0a6a433b/" },
+            { firstname: "Maxim", lastname: "Bauwelinck", link: "https://www.linkedin.com/in/maxim-bauwelinck-a0a6a433b/" }
         ],
         link: "https://github.com/BrittEmanuel2001/RISE-CampusApp-2526"
     },
@@ -51,7 +50,7 @@ const projects = [
         name: "Contentplanning Heimdal",
         image: "Project_Contentplanning.jpg",
         category: category[0],
-        description: "Contentplanning-app ontwikkeld tijdens mijn praesidiumjaar (2024-2025) om het beheer van posts te centraliseren. De applicatie biedt een lijst- en kalenderweergave van posts, ledenbeheer en herinneringen, waardoor het proces overzichtelijker en efficiënter werd in vergelijking met eerdere Excel- en Canva-oplossingen.",
+        description: "Contentplanning-app voor postbeheer met kalender- en lijstweergave, ontwikkeld tijdens mijn praesidiumjaar.",
         tools: [
             { icon: "cibReact", name: "React", type: "framework" },
             { icon: "cibNodeJs", name: "Node.js", type: "framework" }
@@ -63,7 +62,7 @@ const projects = [
         name: "Shopfloor applicatie",
         image: "Project_Shopfloor.jpg",
         category: category[0],
-        description: "Shopfloor-applicatie voor gebruikers-, site- en machinebeheer, met rapportagemogelijkheden. De web- en Java-versie boden elk aangepaste functionaliteiten afhankelijk van de gebruiksomgeving. Uitgevoerd als schoolopdracht, waarbij ons team werd verkozen tot beste groep.",
+        description: "Shopfloor-applicatie voor gebruikers-, site- en machinebeheer met rapportage, ontwikkeld als bekroonde schoolopdracht.",
         tools: [
             { icon: "cibReact", name: "React", type: "framework" },
             { icon: "cibNodeJs", name: "Node.js", type: "framework" },
@@ -82,7 +81,7 @@ const projects = [
         name: "Queendomino",
         image: "Project_Queendomino.jpg",
         category: category[0],
-        description: "Queendomino, een digitale adaptatie van Kingdomino, ontwikkeld door ons vrouwelijke dev-team als eerste groepsproject binnen het TI-vak SDP1. Fun fact: het project werd een jaar later getoond als voorbeeld voor nieuwe eerstejaarsstudenten.",
+        description: "Digitale adaptatie van Kingdomino, ontwikkeld als eerste groepsproject binnen SDP1 door een volledig vrouwelijk team.",
         tools: [
             { icon: "cibJava", name: "Java", type: "language" }
         ],
