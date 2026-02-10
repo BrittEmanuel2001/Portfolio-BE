@@ -11,7 +11,7 @@ const popupVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            staggerChildren: 0.1, // elke child komt 0.1s later
+            staggerChildren: 0.1,
             delayChildren: 0.1,
         },
     },
@@ -29,6 +29,33 @@ const badgeVariants = {
 
 const Projects = () => {
     const [activeProject, setActiveProject] = useState(null);
+    const [copied, setCopied] = useState(false);
+
+    const handleShare = async () => {
+        if (!activeProject) return;
+
+        const projectLink = activeProject.link;
+        const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        if (navigator.share && isMobile) {
+            try {
+                await navigator.share({
+                    title: `Check dit project: ${activeProject.name}`,
+                    url: projectLink,
+                });
+            } catch (err) {
+                console.log("Share canceled or failed:", err);
+            }
+        } else {
+            try {
+                await navigator.clipboard.writeText(projectLink);
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000);
+            } catch (err) {
+                console.log("Copy failed:", err);
+            }
+        }
+    };
 
     return (
         <div className="projects-section white-border">
@@ -111,7 +138,7 @@ const Projects = () => {
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                         className="link-icon"
                                     >
-                                        <a href={activeProject.link}><CIcon icon={icons["cibGithub"]} /></a>
+                                        <a href={activeProject.link} target="_blank"><CIcon icon={icons["cibGithub"]} /></a>
                                     </motion.div>
 
                                     <motion.div
@@ -119,8 +146,10 @@ const Projects = () => {
                                         whileTap={{ scale: 0.9, rotate: 0 }}
                                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                                         className="link-icon"
+                                        onClick={handleShare}
                                     >
-                                        <a href={activeProject.link}><CIcon icon={icons["cilShareAlt"]} /></a>
+                                        <span><CIcon icon={icons["cilShareAlt"]} /></span>
+                                        {copied && <span className="copied-tooltip">Gekopieerd!</span>}
                                     </motion.div>
                                 </div>
 

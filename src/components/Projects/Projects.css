@@ -154,7 +154,8 @@
     margin-bottom: 5px;
 }
 
-.link-icon a {
+.link-icon a,
+.link-icon span {
     color: white;
     fill: currentColor;
 }
@@ -164,8 +165,10 @@
     width: 28px;
 }
 
-.link-icon a:hover {
+.link-icon a:hover,
+.link-icon span:hover {
     color: var(--primary);
+    cursor: pointer;
 }
 
 .link-icon:last-child {
@@ -223,6 +226,21 @@
     background-color: var(--primary) !important; 
     color: var(--black) !important;
 }
+
+.copied-tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    border-radius: 30px;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
 
 
 
