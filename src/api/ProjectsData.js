@@ -3,30 +3,6 @@ const category = ["Development", "Design"];
 const projects = [
     {
         id: 1,
-        name: "TechSphere 2025",
-        image: "Project_TechSphere_2.jpg",
-        category: category[0],
-        description: "Schaalbare Spring Boot webapplicatie voor het organiseren van een techconferentie, met gebruikersbeheer, eventplanning en ruimtebeheer.",
-        tools: [
-            { icon: "cibSpring", name: "Spring Boot", type: "framework" }
-        ],
-        link: "https://github.com/BrittEmanuel2001/TechSphere-2425"
-    },
-    {
-        id: 2,
-        name: "The End(o)game - Bachelorproef",
-        image: "Project_TheEndogame.jpg",
-        category: category[1],
-        description: "Educatief kaartspel dat bewustwording creëert rond endometriose, ontwikkeld als bachelorproef binnen GDM.",
-        tools: [
-            { icon: "cibAdobePhotoshop", name: "Adobe Photoshop" },
-            { icon: "cibAdobeIllustrator", name: "Adobe Illustrator" },
-            { icon: "cibAdobeIndesign", name: "Adobe InDesign" }
-        ],
-        link: "https://theendogame.wixsite.com/theend-o-game"
-    },
-    {
-        id: 3,
         name: "Campus app",
         image: "Project_CampusApp.jpg",
         category: category[0],
@@ -46,19 +22,36 @@ const projects = [
         link: "https://github.com/BrittEmanuel2001/RISE-CampusApp-2526"
     },
     {
-        id: 4,
-        name: "Contentplanning Heimdal",
-        image: "Project_Contentplanning.jpg",
-        category: category[0],
-        description: "Contentplanning-app voor postbeheer met kalender- en lijstweergave, ontwikkeld tijdens mijn praesidiumjaar.",
+        id: 2,
+        name: "The End(o)game - Bachelorproef",
+        image: "Project_TheEndogame.jpg",
+        category: category[1],
+        description: "Educatief kaartspel dat bewustwording creëert rond endometriose, ontwikkeld als bachelorproef binnen GDM.",
         tools: [
-            { icon: "cibReact", name: "React", type: "framework" },
-            { icon: "cibNodeJs", name: "Node.js", type: "framework" }
+            { icon: "cibAdobePhotoshop", name: "Adobe Photoshop" },
+            { icon: "cibAdobeIllustrator", name: "Adobe Illustrator" },
+            { icon: "cibAdobeIndesign", name: "Adobe InDesign" }
         ],
-        link: "https://github.com/BrittEmanuel2001/Frontendweb-2425"
+        link: "https://theendogame.wixsite.com/theend-o-game"
     },
     {
-        id: 5,
+        id: 3,
+        name: "Queendomino",
+        image: "Project_Queendomino.jpg",
+        category: category[0],
+        description: "Digitale adaptatie van Kingdomino, ontwikkeld als eerste groepsproject binnen SDP1 door een volledig vrouwelijk team.",
+        tools: [
+            { icon: "cibJava", name: "Java", type: "language" }
+        ],
+        team: [
+            { firstname: "Alex", lastname: "Emanuel", link: "https://www.linkedin.com/in/alex-emanuel/" },
+            { firstname: "Maxe", lastname: "Adams", link: "https://www.linkedin.com/in/maxeadams/" },
+            { firstname: "Yana", lastname: "Cattoir", link: "https://www.linkedin.com/in/yana-cattoir-145629363/" }
+        ],
+        link: "https://github.com/BrittEmanuel2001/Queendomino-2324"
+    },
+    {
+        id: 4,
         name: "Shopfloor applicatie",
         image: "Project_Shopfloor.jpg",
         category: category[0],
@@ -77,20 +70,27 @@ const projects = [
         link: "https://github.com/orgs/SDP2-2425/repositories"
     },
     {
-        id: 6,
-        name: "Queendomino",
-        image: "Project_Queendomino.jpg",
+        id: 5,
+        name: "TechSphere 2025",
+        image: "Project_TechSphere_2.jpg",
         category: category[0],
-        description: "Digitale adaptatie van Kingdomino, ontwikkeld als eerste groepsproject binnen SDP1 door een volledig vrouwelijk team.",
+        description: "Schaalbare Spring Boot webapplicatie voor het organiseren van een techconferentie, met gebruikersbeheer, eventplanning en ruimtebeheer.",
         tools: [
-            { icon: "cibJava", name: "Java", type: "language" }
+            { icon: "cibSpring", name: "Spring Boot", type: "framework" }
         ],
-        team: [
-            { firstname: "Alex", lastname: "Emanuel", link: "https://www.linkedin.com/in/alex-emanuel/" },
-            { firstname: "Maxe", lastname: "Adams", link: "https://www.linkedin.com/in/maxeadams/" },
-            { firstname: "Yana", lastname: "Cattoir", link: "https://www.linkedin.com/in/yana-cattoir-145629363/" }
+        link: "https://github.com/BrittEmanuel2001/TechSphere-2425"
+    },
+    {
+        id: 6,
+        name: "Contentplanning Heimdal",
+        image: "Project_Contentplanning.jpg",
+        category: category[0],
+        description: "Contentplanning-app voor postbeheer met kalender- en lijstweergave, ontwikkeld tijdens mijn praesidiumjaar.",
+        tools: [
+            { icon: "cibReact", name: "React", type: "framework" },
+            { icon: "cibNodeJs", name: "Node.js", type: "framework" }
         ],
-        link: "https://github.com/BrittEmanuel2001/Queendomino-2324"
+        link: "https://github.com/BrittEmanuel2001/Frontendweb-2425"
     }
 ];
 

@@ -81,7 +81,7 @@ const Projects = () => {
                 <div className="outside-container">
                     <div className="inside-container">
                         <h3 id="werk">Werk</h3>
-                        <h2>Projectoverzicht</h2>
+                        <h2>In de spotlight</h2>
 
                         <AnimatePresence mode="wait">
                             <motion.div
