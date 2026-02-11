@@ -4,7 +4,7 @@ const projects = [
     {
         id: 1,
         name: "TechSphere 2025",
-        image: "Project_TechSphere.jpg",
+        image: "Project_TechSphere_2.jpg",
         category: category[0],
         description: "Schaalbare Spring Boot webapplicatie voor het organiseren van een techconferentie, met gebruikersbeheer, eventplanning en ruimtebeheer.",
         tools: [
