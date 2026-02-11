@@ -4,14 +4,22 @@ import data from "../../api/ExperienceData";
 
 const tabs = ["Opleiding", "Werkervaring"];
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 }
+};
+
 const ExperienceSectie = () => {
     const [activeTab, setActiveTab] = useState(tabs[0]);
-
-    const cardVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-        exit: { opacity: 0, y: -20 },
-    };
 
     return (
         <div className="experience-section">
@@ -39,17 +47,23 @@ const ExperienceSectie = () => {
             </div>
 
             {/* Cards */}
-            <div className="experience-cards">
-                <AnimatePresence mode="wait">
-                    {data[activeTab].map((card, index) => (
-                        <motion.div 
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={activeTab}
+                    variants={containerVariants}
+                    className="experience-cards"
+                    whileInView="visible"
+                    viewport={{ once: false, amount: 0.2 }}
+                    initial="hidden"
+                    exit="hidden"
+                >
+                    {data[activeTab].map((card) => (
+                        <motion.div
                             key={card.title}
                             className="experience-card"
                             variants={cardVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="exit"
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            whileHover={{ y: -8 }}
                         >
                             <p className="date">{card.date}</p>
                             <p className="title">{card.title}</p>
@@ -57,8 +71,8 @@ const ExperienceSectie = () => {
                             <p className="location">{card.location}</p>
                         </motion.div>
                     ))}
-                </AnimatePresence>
-            </div>
+                </motion.div>
+            </AnimatePresence>
         </div>
 
     );

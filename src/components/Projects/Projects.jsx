@@ -75,8 +75,8 @@ const Projects = () => {
                                     className="project-card"
                                     key={p.id}
                                     onClick={() => setActiveProject(p)}
-                                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                    initial={{ opacity: 0, y: 40}}
+                                    whileInView={{ opacity: 1, y: 0}}
                                     viewport={{ once: false, amount: 0.3 }}
                                     transition={{ duration: 0.5, ease: "easeOut" }}
                                     whileHover={{ y: -8 }}

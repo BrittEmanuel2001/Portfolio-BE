@@ -24,12 +24,6 @@ const badgeVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
-const imageVariants = {
-  hidden: { opacity: 0, scale: 1.02 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
-  exit: { opacity: 0, scale: 0.98 },
-};
-
 
 const SkillsSectie = ({ activeTab, setActiveTab }) => {
 
