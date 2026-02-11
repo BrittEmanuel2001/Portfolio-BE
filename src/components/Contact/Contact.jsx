@@ -27,13 +27,13 @@ const Contact = () => {
 
     return (
         <div className="contact-section">
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
                 <div className="outside-container">
+                    <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                    >
                     <div className="inside-container">
                         <div className="contact-info">
                             <h3 id="contact">Contact</h3>
@@ -87,9 +87,9 @@ const Contact = () => {
                             </form>
                         </div>
                     </div>
+                    </motion.div>
                     <img src="./background/BE-letters.svg" className="contact-letters" />
                 </div>
-            </motion.div>
 
             <AnimatePresence>
                 {snackbar.show && (
