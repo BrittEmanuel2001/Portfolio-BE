@@ -9,15 +9,33 @@ const Contact = () => {
 
     const onSubmit = async (data) => {
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2000))
-            reset();
-            setSnackbar({ show: true, message: 'Bericht succesvol verzonden!', type: 'success' });
+            const formData = new FormData();
+
+            Object.keys(data).forEach((key) => {
+                formData.append(key, data[key]);
+            });
+
+            formData.append("access_key", "26fa8eb4-e21c-439b-87b2-88f5ac032a7f");
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                reset();
+                setSnackbar({ show: true, message: 'Bericht succesvol verzonden!', type: 'success' });
+            } else {
+                setSnackbar({ show: true, message: 'Er ging iets mis.', type: 'error' });
+            }
+
         } catch(err) {
             setSnackbar({ show: true, message: 'Er is iets misgegaan. Probeer opnieuw.', type: 'error' });
         }
     };
 
-    // Verberg snackbar na 3 seconden automatisch
     useEffect(() => {
         if (snackbar.show) {
             const timer = setTimeout(() => setSnackbar({ ...snackbar, show: false }), 3000);
