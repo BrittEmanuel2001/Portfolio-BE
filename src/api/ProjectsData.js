@@ -10,7 +10,7 @@ const projects = [
         tools: [
             { icon: "cibSpring", name: "Spring Boot", type: "framework" }
         ],
-        link: "https://github.com/BrittEmanuel2001?tab=repositories"
+        link: "https://github.com/BrittEmanuel2001/TechSphere-2425"
     },
     {
         id: 2,
