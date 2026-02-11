@@ -5,6 +5,20 @@ import CIcon from "@coreui/icons-react";
 import * as icons from "@coreui/icons";
 import "./Projects.css";
 
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.15
+        }
+    }
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+};
+
 const popupVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -69,29 +83,36 @@ const Projects = () => {
                         <h3 id="werk">Werk</h3>
                         <h2>Projectoverzicht</h2>
 
-                        <div className="images-container">
-                            {projects.map((p) => (
-                                <motion.div
-                                    className="project-card"
-                                    key={p.id}
-                                    onClick={() => setActiveProject(p)}
-                                    initial={{ opacity: 0, y: 40}}
-                                    whileInView={{ opacity: 1, y: 0}}
-                                    viewport={{ once: false, amount: 0.3 }}
-                                    transition={{ duration: 0.5, ease: "easeOut" }}
-                                    whileHover={{ y: -8 }}
-                                >
-                                    <img
-                                        className="project-image"
-                                        src={`./projects/${p.image}`}
-                                        alt={p.name}
-                                    />
-                                    <div className="overlay">
-                                        <span className="project-name">{p.name}</span>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                variants={containerVariants}
+                                className="images-container"
+                                whileInView="visible"
+                                viewport={{ once: false, amount: 0.2 }}
+                                initial="hidden"
+                                exit="hidden"
+                            >
+                                {projects.map((p) => (
+                                    <motion.div
+                                        className="project-card"
+                                        key={p.id}
+                                        onClick={() => setActiveProject(p)}
+                                        variants={cardVariants}
+                                        transition={{ duration: 0.5, ease: "easeOut" }}
+                                        whileHover={{ y: -8 }}
+                                    >
+                                        <img
+                                            className="project-image"
+                                            src={`./projects/${p.image}`}
+                                            alt={p.name}
+                                        />
+                                        <div className="overlay">
+                                            <span className="project-name">{p.name}</span>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </motion.div>
+                        </AnimatePresence>
                     </div>
                 </div>
             </motion.div>
@@ -155,6 +176,7 @@ const Projects = () => {
                                     </motion.div>
                                 </div>
 
+                                <AnimatePresence mode="wait">
                                 <motion.div
                                     className="popup-content"
                                     variants={popupVariants}
@@ -185,13 +207,13 @@ const Projects = () => {
                                         </motion.p>
                                     )}
 
-                                    <motion.div className="badges" variants={itemVariants}>
+                                    <motion.div className="badges">
                                         {activeProject.tools.map((tool, i) => (
                                             <motion.div
                                                 className="tool-badge"
                                                 key={i}
                                                 data-type={tool.type}
-                                                variants={itemVariants}
+                                                variants={badgeVariants}
                                             >
                                                 <CIcon icon={icons[tool.icon]} size="sm" className="tool-icon" />
                                                 {tool.name}
@@ -199,6 +221,7 @@ const Projects = () => {
                                         ))}
                                     </motion.div>
                                 </motion.div>
+                                </AnimatePresence>
                             </div>
                         </motion.div>
                     </motion.div>
