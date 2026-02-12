@@ -96,9 +96,18 @@ const Navbar = () => {
             <div className="navbar-mobile">
                 <div className="nav-top-mobile">
                     <img src="BE-logo.svg" alt="Logo" />
-                    <button className="hamburger" onClick={toggleMenu}>
+                    {/* <button className="hamburger" onClick={toggleMenu}>
                     {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button> */}
+                    <button 
+                        className={`hamburger ${mobileOpen ? "open" : ""}`} 
+                        onClick={toggleMenu}
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </button>
+
                 </div>
 
                 <AnimatePresence>
