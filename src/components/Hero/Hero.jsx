@@ -17,7 +17,7 @@ const Hero = () => {
                 <picture>
                     <source 
                         media="(max-width: 768px)" 
-                        srcSet="./background/BE-letters.svg" 
+                        srcSet="./background/BE-letters-1pad.svg" 
                     />
                     <img 
                         src="./background/Portfolio_Britt_v11.jpg" 

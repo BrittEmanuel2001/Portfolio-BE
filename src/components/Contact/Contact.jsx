@@ -106,7 +106,7 @@ const Contact = () => {
                         </div>
                     </div>
                     </motion.div>
-                    <img src="./background/BE-letters.svg" className="contact-letters" />
+                    <img src="./background/BE-letters-1pad.svg" className="contact-letters" />
                 </div>
 
             <AnimatePresence>
