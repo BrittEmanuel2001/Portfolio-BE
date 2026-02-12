@@ -17,7 +17,7 @@ const About = () => {
                         <div className="flex-center">
                             <p>Hello there! Ik ben Britt Emanuel, grafisch ontwerper en webdeveloper. Van kinds af aan speelde ik met Paint en WordArt en bewonderde ik games om hun design. Wat ooit nieuwsgierigheid was, groeide uit tot een passie voor digitale ervaringen die zowel mooi als slim zijn.</p>
                             <p>In 2019 startte ik met <strong>Grafische en Digitale Media</strong> en in 2023 breidde ik mijn kennis uit met <strong>Toegepaste Informatica</strong> aan HOGENT.</p>
-                            <p>In mijn persoonlijke leven ben ik trotse kattenbaasje van mijn Maine Coon, Tigrou, die stiekem dienstdoet als kwaliteitscontroleur van alles wat ik doe. Daarnaast ben ik actief bij studentenvereniging Heimdal, waar ik momenteel help met het ontwikkelen van hun nieuwe website.</p>
+                            <p>In mijn persoonlijke leven ben ik trots kattenbaasje van mijn Maine Coon, Tigrou, die stiekem dienstdoet als kwaliteitscontroleur van alles wat ik doe. Daarnaast ben ik actief bij studentenvereniging Heimdal, waar ik momenteel help met het ontwikkelen van hun nieuwe website.</p>
                         </div>
                     </div>
                 </div>

@@ -95,7 +95,7 @@
     gap: 5px;
     bottom: 20px;
     position: absolute;
-    z-index: 7;
+    z-index: 2001;
 }
 
 .socials a {
