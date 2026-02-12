@@ -14,7 +14,17 @@ const Hero = () => {
         <div id="home" className="hero-section relative-container">
             <div className="gradient"></div>
             <div className='BE-letters'>
-                <img src='./background/Portfolio_Britt_v11.jpg'></img>
+                <picture>
+                    <source 
+                        media="(max-width: 768px)" 
+                        srcSet="./background/BE-letters.svg" 
+                    />
+                    <img 
+                        src="./background/Portfolio_Britt_v11.jpg" 
+                        alt="Portfolio Britt" 
+                    />
+                </picture>
+                {/* <img src='./background/Portfolio_Britt_v11.jpg'></img> */}
             </div>
             <div className='outside-container relative-container'>
                 <div className="inside-container relative-container">
