@@ -1,6 +1,12 @@
 const data = {
     Opleiding: [
         { 
+            date: "29.03.2013 - 28.06.2013",
+            title: "Getuigschrift dactylografie",
+            description: "Niveau beginners",
+            location: "Sint-Vincentiuscollege, Buggenhout"
+        },
+        { 
             date: "01.09.2013 - 30.06.2019",
             title: "Diploma Secundair Onderwijs",
             description: "Economie-moderne talen",
@@ -17,7 +23,7 @@ const data = {
             title: "Bachelor Toegepaste Informatica",
             description: "Specialisatie full stack development",
             location: "HOGENT, Gent"
-        },
+        }
     ],
 
     Werkervaring: [
@@ -35,9 +41,15 @@ const data = {
         },
         { 
             date: "13.05.2024 - 12.05.2025",
-            title: "Studentenvereniging Heimdal",
-            description: "Praesidiumlid die instaat voor de vereniging van alle nodige grafische toepassingen te voorzien. (eventbanners, stickers, website ontwerp ...)",
+            title: "Vereniging Heimdal",
+            description: "Praesidiumlid die instond voor de vereniging van foto's, social media en web design te voorzien.",
             location: "Praesidiumlid - Media"
+        },
+        { 
+            date: "16.02.2026 - Heden",
+            title: "IT1",
+            description: "Aan te vullen",
+            location: "Stagiair"
         },
     ],
 };

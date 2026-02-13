@@ -183,7 +183,7 @@
 .experience-cards .experience-card {
     flex: 1;
     min-width: 0;
-    min-height: 160px;
+    min-height: 180px;
     background-color: var(--darker-grey);
     padding: 20px 30px 30px 30px;
     border-left: 2px var(--primary) solid;
