@@ -47,8 +47,8 @@ const data = {
         },
         { 
             date: "16.02.2026 - Heden",
-            title: "IT1",
-            description: "Aan te vullen",
+            title: "IT1 - WEBRAND",
+            description: "Analyse en optimalisatie van webapps a.d.h.v. UX-driven frontend- en backend development.",
             location: "Stagiair"
         },
     ],
