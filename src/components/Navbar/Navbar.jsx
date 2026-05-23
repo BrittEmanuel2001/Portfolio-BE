@@ -85,7 +85,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="cv">
-                    <a href="files/cv_BrittEmanuel_2026_v2.pdf" download>
+                    <a href="files/cv_BrittEmanuel_2026_v3.pdf" download>
                         <Download />
                         <p>CV</p>
                     </a>

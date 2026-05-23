@@ -41,9 +41,13 @@ const tabs = [
         { icon: "cibCss3Shiled", name: "CSS", type: "language" },
         { icon: "cibJavascript", name: "Javascript", type: "language" },
         { icon: "cibTypescript", name: "Typescript", type: "language" },
+        { icon: "cibPhp", name: "PHP", type: "language" },
+
         { icon: "cibReact", name: "React", type: "framework" },
         { icon: "cilLayers", name: "Blazor WebAssembly", type: "framework" },
+        { icon: "cibLaravel", name: "Laravel Blade", type: "framework" },
         { icon: "cibCsswizardry", name: "Tailwind CSS", type: "framework" },
+
         { icon: "cibGit", name: "Git", type: "tooling" },
     ],
     image: "Project_CampusApp.jpg"
@@ -59,14 +63,19 @@ const tabs = [
         { icon: "cibJava", name: "Java", type: "language" },
         { icon: "cibC", name: "C#", type: "language" },
         { icon: "cibPython", name: "Python", type: "language" },
+        { icon: "cibPhp", name: "PHP", type: "language" },
+
         { icon: "cibDotNet", name: ".NET", type: "framework" },
         { icon: "cibNodeJs", name: "Node.js", type: "framework" },
         { icon: "cibSpring", name: "Spring Boot", type: "framework" },
+        { icon: "cibLaravel", name: "Laravel", type: "framework" },
+
+        { icon: "cibGit", name: "Git", type: "tooling" },
+
         { icon: "cibMysql", name: "MySQL", type: "database" },
         { icon: "cibMongodb", name: "MongoDB", type: "database" },
         { icon: "cibRedis", name: "Redis", type: "database" },
         { icon: "cibNeo4j", name: "Neo4j", type: "database" },
-        { icon: "cibGit", name: "Git", type: "tooling" },
     ],
     image: "Backend.jpg"
   },

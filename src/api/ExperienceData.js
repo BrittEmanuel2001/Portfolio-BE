@@ -46,7 +46,7 @@ const data = {
             location: "Praesidiumlid - Media"
         },
         { 
-            date: "16.02.2026 - Heden",
+            date: "16.02.2026 - 22.05.2026",
             title: "IT1 - WEBRAND",
             description: "Analyse en optimalisatie van webapps a.d.h.v. UX-driven frontend- en backend development.",
             location: "Stagiair"
