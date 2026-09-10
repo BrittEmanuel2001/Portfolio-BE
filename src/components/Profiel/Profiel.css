@@ -213,7 +213,9 @@
 
 .experience-cards .experience-card .location {
     font-size: 0.7rem;
+    line-height: 1rem;
     color: #7D8493;
+    padding-top: 10px;
 }
 
 

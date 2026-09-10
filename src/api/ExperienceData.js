@@ -19,7 +19,7 @@ const data = {
             location: "Arteveldehogeschool, Gent"
         },
         { 
-            date: "25.09.2023 - Heden",
+            date: "25.09.2023 - 09.09.2026",
             title: "Bachelor Toegepaste Informatica",
             description: "Specialisatie full stack development",
             location: "HOGENT, Gent"
@@ -42,7 +42,7 @@ const data = {
         { 
             date: "13.05.2024 - 12.05.2025",
             title: "Vereniging Heimdal",
-            description: "Praesidiumlid die instond voor de vereniging van foto's, social media en web design te voorzien.",
+            description: "Praesidiumlid die instond voor de vereniging van foto's, social media en hun nieuwe web design.",
             location: "Praesidiumlid - Media"
         },
         { 
